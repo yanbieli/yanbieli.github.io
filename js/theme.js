@@ -13,6 +13,7 @@
     ["219,39,119", "#db2777", "#fdf2f8", "#be185d", "粉色！🌸"],
   ];
   const themeToggle = document.querySelector(".theme-toggle");
+  const themeControl = document.querySelector("[data-theme-control]");
   const quickDialog = document.querySelector("[data-quick-dialog]");
   const quickSearch = quickDialog?.querySelector("[data-quick-search]");
   const quickSearchStatus = quickDialog?.querySelector("[data-quick-search-status]");
@@ -22,6 +23,7 @@
   let searchIndexPromise;
   const mobileToggle = document.querySelector("[data-mobile-toggle]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
+  const mobileNavBackdrop = document.querySelector("[data-mobile-nav-close]");
   const homeVisual = document.querySelector(".home-visual");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const lightbox = document.querySelector("[data-lightbox-dialog]");
@@ -67,16 +69,26 @@
     const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = nextTheme;
     localStorage.setItem(themeKey, nextTheme);
+    themeControl?.classList.remove("theme-scene-animate");
+    if (themeControl) {
+      void themeControl.offsetWidth;
+      themeControl.classList.add("theme-scene-animate");
+    }
     themeToggle?.classList.remove("theme-toggle-animate");
     void themeToggle?.offsetWidth;
     themeToggle?.classList.add("theme-toggle-animate");
     document.querySelectorAll("[data-theme-label]").forEach((label) => {
       label.textContent = nextTheme === "dark" ? "暗模式：开启" : "暗模式：关闭";
     });
-    document.querySelector("[data-theme-control]")?.classList.toggle("is-active", nextTheme === "dark");
+    themeControl?.classList.toggle("is-active", nextTheme === "dark");
   };
   themeToggle?.addEventListener("click", setTheme);
-  document.querySelector("[data-theme-control]")?.addEventListener("click", setTheme);
+  themeControl?.addEventListener("click", setTheme);
+  themeControl?.addEventListener("animationend", (event) => {
+    if (event.target.matches(".theme-scene-sun, .theme-scene-moon")) {
+      themeControl.classList.remove("theme-scene-animate");
+    }
+  });
   const syncFocusControl = () => {
     const active = body.classList.contains("focus-mode");
     const button = document.querySelector("[data-focus-control]");
@@ -89,7 +101,7 @@
     syncFocusControl();
   };
   document.querySelector("[data-focus-control]")?.addEventListener("click", toggleFocus);
-  document.querySelector("[data-theme-control]")?.classList.toggle("is-active", root.dataset.theme === "dark");
+  themeControl?.classList.toggle("is-active", root.dataset.theme === "dark");
   document.querySelectorAll("[data-theme-label]").forEach((label) => {
     label.textContent = root.dataset.theme === "dark" ? "暗模式：开启" : "暗模式：关闭";
   });
@@ -221,18 +233,26 @@
     }
   });
 
+  const setMobileNavOpen = (isOpen) => {
+    mobileNav?.classList.toggle("is-open", isOpen);
+    mobileNavBackdrop?.classList.toggle("is-open", isOpen);
+    mobileNav?.setAttribute("aria-hidden", String(!isOpen));
+    mobileToggle?.setAttribute("aria-expanded", String(isOpen));
+    mobileToggle?.setAttribute("aria-label", isOpen ? "收起菜单" : "展开菜单");
+    if (mobileToggle) mobileToggle.textContent = isOpen ? "×" : "☰";
+  };
   mobileToggle?.addEventListener("click", () => {
-    const isOpen = mobileNav?.classList.toggle("is-open") ?? false;
-    mobileToggle.setAttribute("aria-expanded", String(isOpen));
-    mobileToggle.setAttribute("aria-label", isOpen ? "收起菜单" : "展开菜单");
-    mobileToggle.textContent = isOpen ? "×" : "☰";
+    setMobileNavOpen(mobileToggle.getAttribute("aria-expanded") !== "true");
+  });
+  mobileNavBackdrop?.addEventListener("click", () => setMobileNavOpen(false));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mobileToggle?.getAttribute("aria-expanded") === "true") {
+      setMobileNavOpen(false);
+      mobileToggle.focus();
+    }
   });
   mobileNav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileNav.classList.remove("is-open");
-      mobileToggle?.setAttribute("aria-expanded", "false");
-      if (mobileToggle) mobileToggle.textContent = "☰";
-    });
+    link.addEventListener("click", () => setMobileNavOpen(false));
   });
   document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
     dropdown.addEventListener("toggle", () => {

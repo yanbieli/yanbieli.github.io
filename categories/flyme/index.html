@@ -38,7 +38,7 @@
     <link rel="apple-touch-icon" href="/assets/images/qlAD-avatar.jpg">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/pages.css">
-    <link rel="stylesheet" href="/css/refine.css?v=32">
+    <link rel="stylesheet" href="/css/refine.css?v=48">
     <link rel="stylesheet" href="/css/sections.css?v=10">
     
     
@@ -74,12 +74,16 @@
             <span class="theme-light-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></span>
             <span class="theme-dark-icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z"/><path d="m16 4 .5 1.5L18 6l-1.5.5L16 8l-.5-1.5L14 6l1.5-.5L16 4Z"/></svg></span>
           </button>
-          <button class="mobile-menu-toggle" type="button" aria-label="展开菜单" aria-expanded="false" data-mobile-toggle>☰</button>
+          <button class="mobile-menu-toggle" type="button" aria-label="展开菜单" aria-expanded="false" aria-controls="mobile-navigation" data-mobile-toggle>☰</button>
         </div>
       </nav>
-      <div class="mobile-nav" data-mobile-nav>
-        <a href="/blog/">博客</a><a href="/today-i-learned/">T.I.L</a><a href="/stats/">统计</a><a href="/links/">友情链接</a>
-      </div>
+      <button class="mobile-nav-backdrop" type="button" aria-label="关闭导航菜单" tabindex="-1" data-mobile-nav-close></button>
+      <nav class="mobile-nav" id="mobile-navigation" aria-label="移动端导航" aria-hidden="true" data-mobile-nav>
+        <a href="/blog/">博客</a>
+        <a href="/today-i-learned/">T.I.L</a>
+        <a href="/stats/">统计</a>
+        <a href="/links/">友情链接</a>
+      </nav>
     </header>
     <main>
       
@@ -595,13 +599,13 @@ clash 软件" href="/blog/mac%E4%B8%8B%E9%80%9A%E8%BF%87clashx%E5%AE%9E%E7%8E%B0
             </div>
             <div class="quick-keys"><span>打开快速访问 <kbd>Shift Q</kbd></span><span>切换主题 <kbd>Shift D</kbd></span><span>专注模式 <kbd>Shift F</kbd></span></div>
           </div>
-          <div class="quick-shortcuts"><p class="quick-panel-title">控制中心</p><div class="quick-control-grid"><button type="button" data-theme-control><span class="control-icon">◐</span><span data-theme-label>暗模式：关闭</span></button><button type="button" data-focus-control><span class="control-icon">◉</span><span data-focus-label>专注模式：关闭</span></button></div><p class="quick-panel-title quick-navigation-title">快速导航</p><a href="/blog/">所有文章 <span>↗</span></a><a href="/categories/">文章分类 <span>↗</span></a><a href="/tags/">标签索引 <span>↗</span></a><a href="/about-me/">关于我 <span>↗</span></a><a href="https://github.com/yanbieli" target="_blank" rel="noopener">GitHub <span>↗</span></a><div class="quick-note">静态预览版 · 互动数据功能暂未迁移</div></div>
+          <div class="quick-shortcuts"><p class="quick-panel-title">控制中心</p><div class="quick-control-grid"><button type="button" data-theme-control><span class="theme-scene" aria-hidden="true"><span class="theme-scene-sun"></span><span class="theme-scene-moon"></span><span class="theme-scene-stars"></span><span class="theme-scene-horizon"></span></span><span data-theme-label>暗模式：关闭</span></button><button type="button" data-focus-control><span class="control-icon">◉</span><span data-focus-label>专注模式：关闭</span></button></div><p class="quick-panel-title quick-navigation-title">快速导航</p><a href="/blog/">所有文章 <span>↗</span></a><a href="/categories/">文章分类 <span>↗</span></a><a href="/tags/">标签索引 <span>↗</span></a><a href="/about-me/">关于我 <span>↗</span></a><a href="https://github.com/yanbieli" target="_blank" rel="noopener">GitHub <span>↗</span></a><div class="quick-note">静态预览版 · 互动数据功能暂未迁移</div></div>
         </div>
       </section>
     </dialog>
     
     
     
-    <script src="/js/theme.js?v=12" defer></script>
+    <script src="/js/theme.js?v=14" defer></script>
   </body>
 </html>
