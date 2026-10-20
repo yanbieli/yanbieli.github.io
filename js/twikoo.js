@@ -173,6 +173,15 @@
       document.addEventListener("visibilitychange", refreshRecentComments);
     }
   };
-  script.onerror = (error) => reportFailure("Could not load the Twikoo script.", error);
+  script.onerror = (error) => {
+    const fallbackScript = document.createElement("script");
+    fallbackScript.src = "https://unpkg.com/twikoo@latest/dist/twikoo.min.js";
+    fallbackScript.async = true;
+    fallbackScript.crossOrigin = "anonymous";
+    fallbackScript.onload = script.onload;
+    fallbackScript.onerror = (fallbackError) =>
+      reportFailure("Could not load the Twikoo script from either CDN.", fallbackError || error);
+    document.head.append(fallbackScript);
+  };
   document.head.append(script);
 })();
