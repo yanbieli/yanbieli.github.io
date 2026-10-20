@@ -83,7 +83,7 @@
   }
 
   const script = document.createElement("script");
-  script.src = "https://cdn.jsdmirror.com/npm/twikoo@1.6.44/dist/twikoo.min.js";
+  script.src = "https://cdn.jsdelivr.net/npm/twikoo@latest/dist/twikoo.min.js";
   script.async = true;
   script.crossOrigin = "anonymous";
   script.onload = () => {
