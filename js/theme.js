@@ -458,7 +458,7 @@
   contactLink?.addEventListener("mouseleave", syncContactState);
   syncContactState();
   aboutLink?.addEventListener("click", (event) => {
-    if (aboutLink.getAttribute("href") === "/about-me/" && window.location.pathname.startsWith("/about")) {
+    if (aboutLink.getAttribute("href") === "/about/" && window.location.pathname.startsWith("/about")) {
       event.preventDefault();
     }
   });

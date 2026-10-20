@@ -345,32 +345,11 @@
       <description>&lt;h2 id=&#34;cookies&#34;&gt;Cookies&lt;/h2&gt;&#xA;&lt;p&gt;为了确保网站和我开发的软件的可靠性、安全性和个性化，我使用 Cookies。当你接受 Cookies 时，这有助于通过识别你的身份、记住你的偏好或提供个性化用户体验来帮助我改善网站。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>T.I.L</title>
-      <link>https://guoke.co/today-i-learned/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://guoke.co/today-i-learned/</guid>
-      <description>&lt;article class=&#34;til-item&#34;&gt;&#xD;&#xA;  &lt;time class=&#34;til-item-date&#34; datetime=&#34;2026-07-22&#34;&gt;2026年 07月 22日&lt;/time&gt;&#xD;&#xA;  &lt;div class=&#34;til-item-timeline&#34; aria-hidden=&#34;true&#34;&gt;&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;til-item-content&#34;&gt;&#xD;&#xA;&lt;p&gt;用了很久的github账户dodopoi莫名奇妙被标记，只能自己查看，一切东西都被隐藏，还有什么地方是安全的？&lt;/p&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;/article&gt;&#xD;&#xA;&lt;article class=&#34;til-item&#34;&gt;&#xD;&#xA;  &lt;time class=&#34;til-item-date&#34; datetime=&#34;2026-01-11&#34;&gt;2026年 01月 11日&lt;/time&gt;&#xD;&#xA;  &lt;div class=&#34;til-item-timeline&#34; aria-hidden=&#34;true&#34;&gt;&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;til-item-content&#34;&gt;&#xD;&#xA;&lt;p&gt;统计信息更换为51la。&lt;/p&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;/article&gt;&#xD;&#xA;&lt;article class=&#34;til-item&#34;&gt;&#xD;&#xA;  &lt;time class=&#34;til-item-date&#34; datetime=&#34;2025-10-20&#34;&gt;2025年 10月 20日&lt;/time&gt;&#xD;&#xA;  &lt;div class=&#34;til-item-timeline&#34; aria-hidden=&#34;true&#34;&gt;&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;til-item-content&#34;&gt;&#xD;&#xA;&lt;p&gt;博客版本大更新。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>主题更新</title>
-      <link>https://guoke.co/update/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://guoke.co/update/</guid>
-      <description>&lt;p&gt;本网站主题包括主页、文章页、书影音、相册集和友情链接。部分组件设计参考 &lt;a href=&#34;https://blog.zhheo.com/&#34;&gt;张洪 Heo&lt;/a&gt; 与 &lt;a href=&#34;https://www.eallion.com/&#34;&gt;大大的小蜗牛&lt;/a&gt; 等博主。&lt;/p&gt;&#xA;&lt;p&gt;本站主题基于 &lt;a href=&#34;https://github.com/enjidev/enji.dev&#34;&gt;enji.dev&lt;/a&gt; 二次开发。原站使用 Next.js；当前预览正将页面逐步迁移到 Hugo。&lt;/p&gt;&#xA;&lt;h2 id=&#34;gkblog-v2xx--2025-06-11&#34;&gt;gkBlog v2.x.x · 2025-06-11&lt;/h2&gt;&#xA;&lt;h3 id=&#34;优化&#34;&gt;优化&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;考虑迁移到 App Router。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;gkblog-v220--2025-06-11&#34;&gt;gkBlog v2.2.0 · 2025-06-11&lt;/h2&gt;&#xA;&lt;h3 id=&#34;优化-1&#34;&gt;优化&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;优化侧边栏和文章预览组件。&lt;/li&gt;&#xA;&lt;li&gt;整合 Twikoo 评论系统。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;改变&#34;&gt;改变&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;移除 &lt;code&gt;@fancyapps/ui&lt;/code&gt; 功能。&lt;/li&gt;&#xA;&lt;li&gt;移除 Google Analytics 组件。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;gkblog-v210--2025-04-22&#34;&gt;gkBlog v2.1.0 · 2025-04-22&lt;/h2&gt;&#xA;&lt;h3 id=&#34;新功能&#34;&gt;新功能&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;添加网站统计数据页面和文章缩略图封面。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;优化-2&#34;&gt;优化&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;调整日期显示格式和导航栏响应式设计。&lt;/li&gt;&#xA;&lt;li&gt;使用 PicProse 生成文章缩略图。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;gkblog-v200--2025-03-27&#34;&gt;gkBlog v2.0.0 · 2025-03-27&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;网站改用 Docker 部署并开源。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;gkblog-v176--2024-11-23&#34;&gt;gkBlog v1.7.6 · 2024-11-23&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;使用 Three.js 展示人物形象。&lt;/li&gt;&#xA;&lt;li&gt;部署到阿里云边缘安全加速 ESA。&lt;/li&gt;&#xA;&lt;li&gt;优化快速访问页、导航栏与侧边栏。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;gkblog-v175--2024-11-07&#34;&gt;gkBlog v1.7.5 · 2024-11-07&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;新增 RSS、最近评论与自定义简码。&lt;/li&gt;&#xA;&lt;li&gt;使用音效增强界面交互。&lt;/li&gt;&#xA;&lt;li&gt;修复侧边栏、文章锚点等问题。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>书影音</title>
-      <link>https://guoke.co/media/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://guoke.co/media/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>你好，欢迎！</title>
       <link>https://guoke.co/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://guoke.co/about/</guid>
-      <description>&lt;p&gt;我叫 &lt;strong&gt;言别离&lt;/strong&gt;，是一名热爱技术与创新的计算机爱好者。欢迎通过电子邮件或 GitHub 与我联系。&lt;/p&gt;&#xA;&lt;h2 id=&#34;我的技能&#34;&gt;我的技能&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;编程语言&lt;/strong&gt;：Python&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;联系我&#34;&gt;联系我&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;电子邮件&lt;/strong&gt;：&lt;a href=&#34;mailto:hi@guoke.co&#34;&gt;hi@guoke.co&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;：&lt;a href=&#34;https://github.com/yanbieli&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;座右铭&#34;&gt;座右铭&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;做技术的黑客心态，加上开放共进的态度，是成长和越过高山幽谷的秘籍。&lt;/p&gt;</description>
+      <description>&lt;p&gt;我叫 &lt;strong&gt;言别离&lt;/strong&gt;，是一名热爱技术与创新的计算机爱好者。欢迎通过电子邮件或 GitHub 与我联系。&lt;/p&gt;&#xA;&lt;p&gt;老友，很高兴您能前来。这里是一座名为「&lt;em&gt;guoke&lt;/em&gt;」的小岛，茫茫信息海洋中的一个草木葳蕤的角落。&lt;/p&gt;</description>
     </item>
     <item>
       <title>友情链接</title>
@@ -387,6 +366,20 @@
       <description></description>
     </item>
     <item>
+      <title>我的装备</title>
+      <link>https://guoke.co/equipment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://guoke.co/equipment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>日志</title>
+      <link>https://guoke.co/logs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://guoke.co/logs/</guid>
+      <description>&lt;article class=&#34;logs-item&#34;&gt;&#xD;&#xA;  &lt;time class=&#34;logs-item-date&#34; datetime=&#34;2026-07-22&#34;&gt;2026年 07月 22日&lt;/time&gt;&#xD;&#xA;  &lt;div class=&#34;logs-item-timeline&#34; aria-hidden=&#34;true&#34;&gt;&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;logs-item-content&#34;&gt;&#xD;&#xA;&lt;p&gt;用了很久的github账户dodopoi莫名奇妙被标记，只能自己查看，一切东西都被隐藏，还有什么地方是安全的？&lt;/p&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;/article&gt;&#xD;&#xA;&lt;article class=&#34;logs-item&#34;&gt;&#xD;&#xA;  &lt;time class=&#34;logs-item-date&#34; datetime=&#34;2026-01-11&#34;&gt;2026年 01月 11日&lt;/time&gt;&#xD;&#xA;  &lt;div class=&#34;logs-item-timeline&#34; aria-hidden=&#34;true&#34;&gt;&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;logs-item-content&#34;&gt;&#xD;&#xA;&lt;p&gt;统计信息更换为51la。&lt;/p&gt;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;/article&gt;&#xD;&#xA;&lt;article class=&#34;logs-item&#34;&gt;&#xD;&#xA;  &lt;time class=&#34;logs-item-date&#34; datetime=&#34;2025-10-20&#34;&gt;2025年 10月 20日&lt;/time&gt;&#xD;&#xA;  &lt;div class=&#34;logs-item-timeline&#34; aria-hidden=&#34;true&#34;&gt;&lt;/div&gt;&#xD;&#xA;  &lt;div class=&#34;logs-item-content&#34;&gt;&#xD;&#xA;&lt;p&gt;博客版本大更新。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>版权信息</title>
       <link>https://guoke.co/copyright/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -394,39 +387,11 @@
       <description>&lt;p&gt;版权协议最新更新时间：2024年10月8日&lt;/p&gt;&#xA;&lt;img src=&#34;https://tuchuang.guoke.co/hermeneutics/static/img/gk_logo.png&#34; alt=&#34;guokelogo&#34; style=&#34;zoom:33%;&#34; /&gt;&#xD;&#xA;&lt;h2 id=&#34;版权协议&#34;&gt;版权协议&lt;/h2&gt;&#xA;&lt;p&gt;为了保持文章质量，并保持互联网的开放共享精神，保持页面流量的稳定，综合考虑下本站的所有原创文章均采用cc协议中比较严格的&lt;a href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;署名-非商业性使用-禁止演绎 4.0 国际&lt;/a&gt;标准。这篇文章主要想能够更加清楚明白的介绍本站的协议标准和要求，方便你合理的使用本站的文章。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>留言反馈</title>
-      <link>https://guoke.co/feedback/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://guoke.co/feedback/</guid>
-      <description>&lt;h2 id=&#34;留言与反馈&#34;&gt;留言与反馈&lt;/h2&gt;&#xA;&lt;p&gt;欢迎在下方留言交流；如果你有建议或发现问题，也可以发送邮件至 &lt;a href=&#34;mailto:hi@guoke.co&#34;&gt;hi@guoke.co&lt;/a&gt;。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>相册集</title>
-      <link>https://guoke.co/album/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://guoke.co/album/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>组件示例</title>
-      <link>https://guoke.co/shortcodes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://guoke.co/shortcodes/</guid>
-      <description>&lt;h2 id=&#34;通用内容组件&#34;&gt;通用内容组件&lt;/h2&gt;&#xA;&lt;h3 id=&#34;标题与正文&#34;&gt;标题与正文&lt;/h3&gt;&#xA;&lt;p&gt;使用 Markdown 标题组织文章结构，段落文字保持易读的行距与宽度。&lt;/p&gt;&#xA;&lt;h3 id=&#34;图片与说明&#34;&gt;图片与说明&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://guoke.co/assets/images/cover-image.png&#34; alt=&#34;文章图片示例&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;引用&#34;&gt;引用&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;做技术的黑客心态加上开放共进的态度，是成长和越过高山幽谷的秘籍！&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;代码块&#34;&gt;代码块&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;greet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;: &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`Hello, &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;!`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;表格&#34;&gt;表格&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;类型&lt;/th&gt;&#xA;          &lt;th&gt;说明&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Markdown&lt;/td&gt;&#xA;          &lt;td&gt;适合文章正文和笔记&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Hugo shortcode&lt;/td&gt;&#xA;          &lt;td&gt;用于可复用的富内容组件&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;原站 MDX 中的 React 组件仍在逐项迁移，此页面先展示 Hugo 静态版可以原生保留的内容样式。&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>网站统计数据</title>
       <link>https://guoke.co/stats/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://guoke.co/stats/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>致谢</title>
-      <link>https://guoke.co/credits/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://guoke.co/credits/</guid>
-      <description>&lt;h2 id=&#34;赞助者&#34;&gt;赞助者&lt;/h2&gt;&#xA;&lt;p&gt;感谢打赏的人，因为你们，让我感受到写博客这件事情能够给你们创造了价值。这会让我在这条路上走得更远。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;贡献者&#34;&gt;贡献者&lt;/h2&gt;&#xA;&lt;p&gt;—— 暂时还没有贡献者。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/qlad/gkBlog/blob/main/CONTRIBUTING.md&#34;&gt;如何成为贡献者？&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;特别感谢-&#34;&gt;特别感谢 🙌&lt;/h2&gt;&#xA;&lt;p&gt;我最感激的是：&lt;/p&gt;</description>
     </item>
     <item>
       <title>隐私政策</title>

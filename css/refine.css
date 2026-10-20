@@ -23,7 +23,7 @@ body{overflow-x:hidden}
 .nav-dropdown>summary::-webkit-details-marker{display:none}
 .nav-chevron{width:12px;height:12px;transition:transform .2s}
 .nav-dropdown[open] .nav-chevron{transform:rotate(90deg)}
-.dropdown-menu{position:absolute;top:44px;left:0;z-index:10;display:flex;width:160px;flex-direction:column;gap:0;padding:8px;border:1px solid color-mix(in srgb,var(--line) 75%,transparent);border-radius:16px;background:color-mix(in srgb,var(--surface) 70%,transparent);box-shadow:var(--shadow);backdrop-filter:blur(12px);animation:dropdown-in .18s ease both}
+.dropdown-menu{position:absolute;top:44px;left:0;z-index:10;display:flex;width:max-content;flex-direction:column;gap:0;padding:8px;border:1px solid color-mix(in srgb,var(--line) 75%,transparent);border-radius:16px;background:color-mix(in srgb,var(--surface) 70%,transparent);box-shadow:var(--shadow);backdrop-filter:blur(12px);animation:dropdown-in .18s ease both}
 .dropdown-menu a{display:flex;align-items:center;height:32px;padding:0 8px;border-radius:8px;color:var(--accent);font-size:12px}
 .dropdown-menu a:hover{background:color-mix(in srgb,var(--text) 6%,transparent);color:var(--accent)}
 .nav-actions{display:flex;align-items:center;gap:8px}
