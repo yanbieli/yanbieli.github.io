@@ -147,7 +147,8 @@
   margin-left: 0.5rem !important;
   height: 36px;
 }
-#twikoo .tk-comments .tk-input .el-textarea__inner {
+#twikoo .tk-comments .tk-input .el-textarea__inner,
+#twikoo .tk-comments .tk-input .tk-textarea__inner {
   min-height: 130px !important;
   border-radius: 15px;
   display: block;
@@ -588,7 +589,8 @@
     height: 123px;
     top: -131px;
   }
-  #twikoo .el-textarea__inner {
+  #twikoo .el-textarea__inner,
+  #twikoo .tk-textarea__inner {
     background: var(--twikoo-card-bg) !important;
     overflow: hidden;
     resize: none !important;
@@ -605,7 +607,9 @@
     width: 100%;
   }
   .tk-comments .tk-row-actions-start {
-    position: absolute;
+    position: static;
+    top: auto;
+    left: auto;
   }
 }
 
