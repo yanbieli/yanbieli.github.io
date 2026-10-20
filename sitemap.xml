@@ -17,6 +17,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://guoke.co/categories/</loc>
+    <lastmod>2026-10-20T23:29:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://guoke.co/tags/%E5%8E%9F%E7%A5%9E/</loc>
+    <lastmod>2026-10-20T23:29:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://guoke.co/blog/</loc>
     <lastmod>2026-10-20T23:29:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -27,22 +37,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://guoke.co/tags/</loc>
+    <lastmod>2026-10-20T23:29:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://guoke.co/categories/%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2026-10-20T23:29:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://guoke.co/blog/hello%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2026-10-17T12:24:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://guoke.co/tags/python/</loc>
-    <lastmod>2026-10-17T12:24:10+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://guoke.co/categories/</loc>
-    <lastmod>2026-10-17T12:24:10+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://guoke.co/tags/</loc>
     <lastmod>2026-10-17T12:24:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -79,16 +89,6 @@
   </url><url>
     <loc>https://guoke.co/blog/%E8%8B%B9%E6%9E%9C%E5%8E%86%E5%B9%B4%E5%8F%91%E5%B8%83%E4%BC%9A/</loc>
     <lastmod>2026-01-11T08:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://guoke.co/tags/%E5%8E%9F%E7%A5%9E/</loc>
-    <lastmod>2025-12-12T14:47:19+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://guoke.co/categories/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2025-12-12T14:47:19+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
