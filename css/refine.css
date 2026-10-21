@@ -223,7 +223,7 @@ body.focus-mode .site-header:hover,body.focus-mode .site-footer:hover{opacity:1;
 .quick-search-copy{display:grid;gap:4px;min-width:0}
 .quick-search-copy b{overflow:hidden;color:var(--text);font-size:12px;text-overflow:ellipsis;white-space:nowrap}
 .quick-search-copy small{overflow:hidden;color:var(--muted);font-size:10px;text-overflow:ellipsis;white-space:nowrap}
-.quick-search-arrow{color:var(--accent);font-size:13px;text-align:right}
+.quick-search-arrow{color:var(--accent);text-align:right}
 .quick-search-result:hover .quick-search-copy b{color:var(--accent)}
 .quick-keys{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;color:var(--muted);font-size:9px}.quick-keys span{display:grid;gap:7px}.quick-keys kbd{width:max-content;color:var(--text)}
 .quick-shortcuts{padding:0 5px}.quick-shortcuts>a{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.quick-shortcuts>a span{color:var(--accent)}.quick-shortcuts>a:hover{color:var(--accent)}
@@ -517,3 +517,11 @@ body.focus-mode .site-header:hover,body.focus-mode .site-footer:hover{opacity:1;
   .mobile-nav{inset:68px 10px auto auto;width:calc(100vw - 20px);gap:8px;padding:14px;border-radius:20px}
   .mobile-nav a{min-height:60px}
 }
+
+:root{--external-link-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3h7v7M10 14 21 3'/%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3C/svg%3E")}
+.external-link-icon{display:inline-block;flex:none;width:15px;height:15px;background:currentColor;-webkit-mask:var(--external-link-mask) center/contain no-repeat;mask:var(--external-link-mask) center/contain no-repeat}
+.mdx-contents a[href^="http"]:not([href*="guoke.co"]):not(:has(img,svg))::after,.footer-group a[target="_blank"]::after{display:inline-block;width:.85em;height:.85em;margin-left:.24em;background:currentColor;vertical-align:-.08em;-webkit-mask:var(--external-link-mask) center/contain no-repeat;mask:var(--external-link-mask) center/contain no-repeat;content:""}
+.friend-card{position:relative}
+.friend-card::after{position:absolute;top:50%;right:18px;width:17px;height:17px;background:var(--muted);transform:translateY(-50%);-webkit-mask:var(--external-link-mask) center/contain no-repeat;mask:var(--external-link-mask) center/contain no-repeat;content:"";transition:background-color .2s}
+.friend-card:hover::after{background:var(--accent)}
+.friend-info{padding-right:48px}
