@@ -127,7 +127,8 @@
 <p><strong>经过多次版本迭代，EFI文件已趋于完善，请以文末最新版为准！</strong></p>
 <blockquote>
 <p>EFI更新内容：</p>
-<p>修复开机时屏幕上会显示几行代码的问题。</p></blockquote>
+<p>修复开机时屏幕上会显示几行代码的问题。</p>
+</blockquote>
 <p>首先，感谢国光的黑苹果安装教程，采用了OpenCore的引导安装方式（如果对EFI文件制作感兴趣，请移步至教程https://apple.sqlsec.com）。 其次，这个EFI引导文件只适用于联想小新i2000，已经验证能够在机器上稳定运行。最后，在制作黑苹果U盘引导镜像时最好使用Monterey版本(只要大版本号是12即可），系统可以在大版本号内进行更新，不用更改EFI文件，但是在跨大版本更新或者降级时，需要对EFI文件进行包括但不限于网卡、蓝牙等驱动的更新，祝有需要的朋友使用愉快。</p>
 <p>请注意对比自己的机型，如果不同请谨慎使用</p>
 <p><strong>联想（Lenovo）小新出色版I2000 14英寸超薄本电脑（i7-5500U 4G 8G SSHD 500G HD5500核显 Win8.1）</strong></p>
@@ -138,7 +139,8 @@
 <center>联想（Lenovo)小新出色版I2000 示例图片</center>
 <p><strong>未正常运行的模块：</strong></p>
 <blockquote>
-<p>共享模块中可以进行共享网络创建，但是搜不到共享热点。</p></blockquote>
+<p>共享模块中可以进行共享网络创建，但是搜不到共享热点。</p>
+</blockquote>
 <p><strong>能够正常运行的模块：</strong></p>
 <blockquote>
 <p>音频驱动能正常工作（除却基本补丁外，需额外再打一个热补丁）</p>
@@ -155,7 +157,8 @@
 <p>集显正常</p>
 <p>电池显示正常</p>
 <p>共享模块正常</p>
-<p>``````</p></blockquote>
+<p>``````</p>
+</blockquote>
 <p>按照教程（https://apple.sqlsec.com） 的流程走完，到实际安装黑苹果时遇到了两次卡**[EB|#LOG:EXITBS:START]**，是卡在第一步的白苹果logo，第二次卡在安装MacOS的前一步加载硬盘（界面是MacOS恢复，寻找宗卷），解决办法见下图（以下安装过程的界面图片引自教程）：</p>
 <p>进入Bios将你制作的U盘镜像设置为开机启动（因为后面安装过程中电脑会多次重启，每次都要通过U盘引导进苹果系统，建议将U盘设置为第一顺位启动）。</p>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8502.webp" alt="联想Lenovo小新I2000黑苹果首发体验之旅02"></p>
@@ -200,11 +203,13 @@
 <p><strong>磁盘划分</strong></p>
 <p>通过<code>DiskGenius</code>的WinPE版，对整个磁盘进行重新划分，建立300MB大小的ESP/MSR分区。</p>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8519.webp" alt="联想Lenovo小新I2000黑苹果首发体验之旅19"></p>
-<p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8520.webp" alt="联想Lenovo小新I2000黑苹果首发体验之旅20"></p></blockquote>
+<p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8520.webp" alt="联想Lenovo小新I2000黑苹果首发体验之旅20"></p>
+</blockquote>
 <p>第二种方法：将Windows启动文件和黑苹果的EFI文件放在同一个ESP里。需要事先划分出300Mb以上的空间，装完Windows系统后再安装黑苹果系统。将黑苹果的EFI引导文件中整个OC文件夹拷贝至ESP文件夹里的EFI文件夹内，然后用DiskGenius把黑苹果引导添加至开机启动项即可实现开机时双系统选择启动。</p>
 <blockquote>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8521.webp" alt="联想Lenovo小新I2000黑苹果首发体验之旅21"></p>
-<p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8522.webp" alt="联想Lenovo小新I2000黑苹果首发体验之旅22"></p></blockquote>
+<p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/%E8%81%94%E6%83%B3Lenovo%E5%B0%8F%E6%96%B0I2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%8522.webp" alt="联想Lenovo小新I2000黑苹果首发体验之旅22"></p>
+</blockquote>
             <footer class="post-page-footer">
               <p>文章分类在 <a href="/categories//"></a></p>
               <div class="post-page-tags"><a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">#黑苹果</a></div>

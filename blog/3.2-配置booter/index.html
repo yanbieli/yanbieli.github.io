@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="配置Booter 本节允许对操作系统引导加载程序应用不同类型的UEFI修改，主要是Apple引导加载程序（boot.efi）。这些修改目前为不同的固件类型提供了各种修补程序和环境更改。其中一些功能最初是作为 AptioeMoryFix.efi （不再维护）的一部分实现的。 完整的 Quiks 怪癖 因为各个平台的版本不 …">
+    <meta name="description" content="配置OC">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://guoke.co/blog/3.2-%E9%85%8D%E7%BD%AEbooter/">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="果壳中的宇宙">
 <meta property="og:title" content="3.2 配置Booter">
-<meta property="og:description" content="配置Booter 本节允许对操作系统引导加载程序应用不同类型的UEFI修改，主要是Apple引导加载程序（boot.efi）。这些修改目前为不同的固件类型提供了各种修补程序和环境更改。其中一些功能最初是作为 AptioeMoryFix.efi （不再维护）的一部分实现的。 完整的 Quiks 怪癖 因为各个平台的版本不 …">
+<meta property="og:description" content="配置OC">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guoke.co/blog/3.2-%E9%85%8D%E7%BD%AEbooter/">
 <meta property="og:image" content="https://guoke.co/assets/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="3.2 配置Booter">
-<meta name="twitter:description" content="配置Booter 本节允许对操作系统引导加载程序应用不同类型的UEFI修改，主要是Apple引导加载程序（boot.efi）。这些修改目前为不同的固件类型提供了各种修补程序和环境更改。其中一些功能最初是作为 AptioeMoryFix.efi （不再维护）的一部分实现的。 完整的 Quiks 怪癖 因为各个平台的版本不 …">
+<meta name="twitter:description" content="配置OC">
 <meta name="twitter:image" content="https://guoke.co/assets/images/og-image.png">
 <meta property="article:published_time" content="2023-06-23T08:41:31&#43;08:00">
 <meta property="article:modified_time" content="2023-06-23T08:41:31&#43;08:00">
 <meta property="article:tag" content="黑苹果">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-23T08:41:31+08:00","datePublished":"2023-06-23T08:41:31+08:00","description":"配置Booter 本节允许对操作系统引导加载程序应用不同类型的UEFI修改，主要是Apple引导加载程序（boot.efi）。这些修改目前为不同的固件类型提供了各种修补程序和环境更改。其中一些功能最初是作为 AptioeMoryFix.efi （不再维护）的一部分实现的。 完整的 Quiks 怪癖 因为各个平台的版本不 …","headline":"3.2 配置Booter","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/3.2-%E9%85%8D%E7%BD%AEbooter/","@type":"WebPage"},"name":"3.2 配置Booter","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/3.2-%E9%85%8D%E7%BD%AEbooter/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-23T08:41:31+08:00","datePublished":"2023-06-23T08:41:31+08:00","description":"配置OC","headline":"3.2 配置Booter","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/3.2-%E9%85%8D%E7%BD%AEbooter/","@type":"WebPage"},"name":"3.2 配置Booter","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/3.2-%E9%85%8D%E7%BD%AEbooter/"}</script>
 
     <meta name="color-scheme" content="light dark">
     <title>3.2 配置Booter · 果壳中的宇宙</title>
@@ -96,7 +96,7 @@
       <div class="post-page-header-inner">
         
         <h1>3.2 配置Booter</h1>
-        
+        <p>配置OC</p>
       </div>
     </header>
     <div class="post-page-meta article-content-width">
@@ -248,65 +248,65 @@
 <li>传统引导设置</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Quirk</th>
-          <th>Enabled</th>
-          <th>Comment</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AvoidRuntimeDefrag</td>
-          <td>No</td>
-          <td>Big Sur 可能需要启用此怪癖</td>
-      </tr>
-      <tr>
-          <td>EnableSafeModeSlide</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>EnableWriteUnprotector</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>ProvideCustomSlide</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>RebuildAppleMemoryMap</td>
-          <td>Yes</td>
-          <td>这是引导 OS X 10.4 到 10.6 所必需的</td>
-      </tr>
-      <tr>
-          <td>SetupVirtualMap</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Quirk</th>
+					<th>Enabled</th>
+					<th>Comment</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AvoidRuntimeDefrag</td>
+					<td>No</td>
+					<td>Big Sur 可能需要启用此怪癖</td>
+			</tr>
+			<tr>
+					<td>EnableSafeModeSlide</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>EnableWriteUnprotector</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>ProvideCustomSlide</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>RebuildAppleMemoryMap</td>
+					<td>Yes</td>
+					<td>这是引导 OS X 10.4 到 10.6 所必需的</td>
+			</tr>
+			<tr>
+					<td>SetupVirtualMap</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.2%E9%85%8D%E7%BD%AEBooter/3.2%E9%85%8D%E7%BD%AEBooter01.webp" alt="3.2配置Booter01"></p>
 <ul>
 <li>UEFI 引导设置</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Quirk</th>
-          <th>Enabled</th>
-          <th>Comment</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>RebuildAppleMemoryMap</td>
-          <td>Yes</td>
-          <td>这是引导 OS X 10.4 到 10.6 所必需的</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Quirk</th>
+					<th>Enabled</th>
+					<th>Comment</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>RebuildAppleMemoryMap</td>
+					<td>Yes</td>
+					<td>这是引导 OS X 10.4 到 10.6 所必需的</td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.2%E9%85%8D%E7%BD%AEBooter/3.2%E9%85%8D%E7%BD%AEBooter02.webp" alt="3.2配置Booter02"></p>
 <h3 id="lynnfieldclarkdale">Lynnfield、Clarkdale</h3>
@@ -314,65 +314,65 @@
 <li>传统引导设置</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Quirk</th>
-          <th>Enabled</th>
-          <th>Comment</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AvoidRuntimeDefrag</td>
-          <td>No</td>
-          <td>Big Sur 可能需要启用此怪癖</td>
-      </tr>
-      <tr>
-          <td>EnableSafeModeSlide</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>EnableWriteUnprotector</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>ProvideCustomSlide</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>RebuildAppleMemoryMap</td>
-          <td>Yes</td>
-          <td>这是引导 OS X 10.4 到 10.6 所必需的</td>
-      </tr>
-      <tr>
-          <td>SetupVirtualMap</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Quirk</th>
+					<th>Enabled</th>
+					<th>Comment</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AvoidRuntimeDefrag</td>
+					<td>No</td>
+					<td>Big Sur 可能需要启用此怪癖</td>
+			</tr>
+			<tr>
+					<td>EnableSafeModeSlide</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>EnableWriteUnprotector</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>ProvideCustomSlide</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>RebuildAppleMemoryMap</td>
+					<td>Yes</td>
+					<td>这是引导 OS X 10.4 到 10.6 所必需的</td>
+			</tr>
+			<tr>
+					<td>SetupVirtualMap</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.2%E9%85%8D%E7%BD%AEBooter/3.2%E9%85%8D%E7%BD%AEBooter03.webp" alt="3.2配置Booter03"></p>
 <ul>
 <li>UEFI 引导设置</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Quirk</th>
-          <th>Enabled</th>
-          <th>Comment</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>RebuildAppleMemoryMap</td>
-          <td>Yes</td>
-          <td>这是引导 OS X 10.4 到 10.6 所必需的</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Quirk</th>
+					<th>Enabled</th>
+					<th>Comment</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>RebuildAppleMemoryMap</td>
+					<td>Yes</td>
+					<td>这是引导 OS X 10.4 到 10.6 所必需的</td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.2%E9%85%8D%E7%BD%AEBooter/3.2%E9%85%8D%E7%BD%AEBooter04.webp" alt="3.2配置Booter04"></p>
 <h3 id="sandy-bridgeivy-bridgehaswellbroadwellskylakekaby-lake">Sandy Bridge、Ivy Bridge、Haswell、Broadwell、Skylake、Kaby Lake</h3>
@@ -396,65 +396,65 @@
 <li>传统引导设置</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Quirk</th>
-          <th>Enabled</th>
-          <th>Comment</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AvoidRuntimeDefrag</td>
-          <td>No</td>
-          <td>Big Sur 可能需要启用此怪癖</td>
-      </tr>
-      <tr>
-          <td>EnableSafeModeSlide</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>EnableWriteUnprotector</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>ProvideCustomSlide</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>RebuildAppleMemoryMap</td>
-          <td>Yes</td>
-          <td>这是引导 OS X 10.4 到 10.6 所必需的</td>
-      </tr>
-      <tr>
-          <td>SetupVirtualMap</td>
-          <td>No</td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Quirk</th>
+					<th>Enabled</th>
+					<th>Comment</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AvoidRuntimeDefrag</td>
+					<td>No</td>
+					<td>Big Sur 可能需要启用此怪癖</td>
+			</tr>
+			<tr>
+					<td>EnableSafeModeSlide</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>EnableWriteUnprotector</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>ProvideCustomSlide</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>RebuildAppleMemoryMap</td>
+					<td>Yes</td>
+					<td>这是引导 OS X 10.4 到 10.6 所必需的</td>
+			</tr>
+			<tr>
+					<td>SetupVirtualMap</td>
+					<td>No</td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.2%E9%85%8D%E7%BD%AEBooter/3.2%E9%85%8D%E7%BD%AEBooter19.webp" alt="3.2配置Booter19"></p>
 <ul>
 <li>UEFI 引导设置</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Quirk</th>
-          <th>Enabled</th>
-          <th>Comment</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>RebuildAppleMemoryMap</td>
-          <td>Yes</td>
-          <td>这是引导 OS X 10.4 到 10.6 所必需的</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Quirk</th>
+					<th>Enabled</th>
+					<th>Comment</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>RebuildAppleMemoryMap</td>
+					<td>Yes</td>
+					<td>这是引导 OS X 10.4 到 10.6 所必需的</td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.2%E9%85%8D%E7%BD%AEBooter/3.2%E9%85%8D%E7%BD%AEBooter20.webp" alt="3.2配置Booter20"></p>
 <h3 id="sandy-bridgeivy-bridgehaswellbroadwellskylakekaby-lake-1">Sandy Bridge、Ivy Bridge、Haswell、Broadwell、Skylake、Kaby Lake</h3>

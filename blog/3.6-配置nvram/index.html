@@ -136,7 +136,8 @@
 <li>如果非 4k 显示器使用脚本强制开启 HiDPi 的话也建议使用，这样开机 Logo 不会大小变</li>
 </ul>
 <blockquote>
-<p>更新一下，OC 后面的版本这部分调整了，具体变动如下：</p></blockquote>
+<p>更新一下，OC 后面的版本这部分调整了，具体变动如下：</p>
+</blockquote>
 <p>OC 后面的版本将 UCScale 这个参数移动到了「UEFI 设置」下面的 「显示输出」标签里面了，这样大家手动选择对应的值就 OK 了：</p>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.6%E9%85%8D%E7%BD%AENVRAM/3.6%E9%85%8D%E7%BD%AENVRAM03.webp" alt="3.6配置NVRAM03"></p>
 <h2 id="boot-args-启动项">boot-args 启动项</h2>
@@ -144,70 +145,70 @@
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.6%E9%85%8D%E7%BD%AENVRAM/3.6%E9%85%8D%E7%BD%AENVRAM04.webp" alt="3.6配置NVRAM04"></p>
 <p>常用内核引导标识符合集：</p>
 <table>
-  <thead>
-      <tr>
-          <th>引导标识符</th>
-          <th>作用</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>-amd_no_dgpu_accel</code></td>
-          <td>关闭 AMD 显卡硬件加速</td>
-      </tr>
-      <tr>
-          <td><code>cpus=#</code></td>
-          <td>启用 <code>#</code> 个 CPU 核心</td>
-      </tr>
-      <tr>
-          <td><a href="http://www.yekki.me/power-nap-and-darkwake-argument/"><code>darkwake=0</code></a></td>
-          <td>禁用 Power Nap</td>
-      </tr>
-      <tr>
-          <td><code>dart=0</code></td>
-          <td>禁用 VT-d</td>
-      </tr>
-      <tr>
-          <td><code>debug=0x100</code></td>
-          <td>发生 KP 时不自动重启</td>
-      </tr>
-      <tr>
-          <td><code>kext-dev-mode=1</code></td>
-          <td>启用 Kext 开发模式, 非开发者请勿使用</td>
-      </tr>
-      <tr>
-          <td><code>-no_compat_check</code></td>
-          <td>关闭兼容性检查</td>
-      </tr>
-      <tr>
-          <td><code>-s</code></td>
-          <td>单用户模式</td>
-      </tr>
-      <tr>
-          <td><code>slide=#</code></td>
-          <td>手动设置 KASLR slide 值为 <code>#</code></td>
-      </tr>
-      <tr>
-          <td><code>-v</code></td>
-          <td>verbose 跑码模式</td>
-      </tr>
-      <tr>
-          <td><code>-x</code></td>
-          <td>安全模式</td>
-      </tr>
-      <tr>
-          <td><code>alcid=x</code></td>
-          <td>注入 AppleALC 声卡 ID</td>
-      </tr>
-      <tr>
-          <td><code>agdpmod=pikera</code></td>
-          <td>5700XT 等高端 A 卡需要配合这个参数，否则可能黑屏</td>
-      </tr>
-      <tr>
-          <td><code>-wegnoegpu</code></td>
-          <td>用于禁用除集成 Intel iGPU 之外的所有其他 GPU</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>引导标识符</th>
+					<th>作用</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>-amd_no_dgpu_accel</code></td>
+					<td>关闭 AMD 显卡硬件加速</td>
+			</tr>
+			<tr>
+					<td><code>cpus=#</code></td>
+					<td>启用 <code>#</code> 个 CPU 核心</td>
+			</tr>
+			<tr>
+					<td><a href="http://www.yekki.me/power-nap-and-darkwake-argument/"><code>darkwake=0</code></a></td>
+					<td>禁用 Power Nap</td>
+			</tr>
+			<tr>
+					<td><code>dart=0</code></td>
+					<td>禁用 VT-d</td>
+			</tr>
+			<tr>
+					<td><code>debug=0x100</code></td>
+					<td>发生 KP 时不自动重启</td>
+			</tr>
+			<tr>
+					<td><code>kext-dev-mode=1</code></td>
+					<td>启用 Kext 开发模式, 非开发者请勿使用</td>
+			</tr>
+			<tr>
+					<td><code>-no_compat_check</code></td>
+					<td>关闭兼容性检查</td>
+			</tr>
+			<tr>
+					<td><code>-s</code></td>
+					<td>单用户模式</td>
+			</tr>
+			<tr>
+					<td><code>slide=#</code></td>
+					<td>手动设置 KASLR slide 值为 <code>#</code></td>
+			</tr>
+			<tr>
+					<td><code>-v</code></td>
+					<td>verbose 跑码模式</td>
+			</tr>
+			<tr>
+					<td><code>-x</code></td>
+					<td>安全模式</td>
+			</tr>
+			<tr>
+					<td><code>alcid=x</code></td>
+					<td>注入 AppleALC 声卡 ID</td>
+			</tr>
+			<tr>
+					<td><code>agdpmod=pikera</code></td>
+					<td>5700XT 等高端 A 卡需要配合这个参数，否则可能黑屏</td>
+			</tr>
+			<tr>
+					<td><code>-wegnoegpu</code></td>
+					<td>用于禁用除集成 Intel iGPU 之外的所有其他 GPU</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="csr-active-config-sip-相关"><strong>csr-active-config</strong> SIP 相关</h2>
 <p>系统完整性保护 (SIP) 的设置，一般建议默认就行，</p>
@@ -228,25 +229,25 @@
 <p>如果你安装系统发现为俄语的话，那么多半是这里语言设置不对，记得改回对应的语言，改好了要<strong>重置下 NVRAM</strong> 才可以生效。</p>
 <p>常见的语言：</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">语种</th>
-          <th style="text-align: left">字符串</th>
-          <th style="text-align: left">DATA类型</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">英语</td>
-          <td style="text-align: left">en-US:0</td>
-          <td style="text-align: left">656e2d55533a30</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">中文</td>
-          <td style="text-align: left">zh-Hans:0</td>
-          <td style="text-align: left">7A682D48 616E733A 323532</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">语种</th>
+					<th style="text-align: left">字符串</th>
+					<th style="text-align: left">DATA类型</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">英语</td>
+					<td style="text-align: left">en-US:0</td>
+					<td style="text-align: left">656e2d55533a30</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">中文</td>
+					<td style="text-align: left">zh-Hans:0</td>
+					<td style="text-align: left">7A682D48 616E733A 323532</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="writeflash">WriteFlash</h2>
 <p>这个选项也是默认配置就勾选的，表示允许为所添加的变量写入闪存，我们保留默认即可：</p>

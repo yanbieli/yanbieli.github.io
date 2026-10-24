@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="写在前面： 需要在mac系统里进行，并在商店里下载好需要的镜像文件，这里以monterey12.6.7为例。 1、利用磁盘工具建立空白镜像，大小15GB，格式为扩展日志格式。 在终端里输入： diskutil list /dev/disk0 (internal, physical): #: TYPE NAME SIZE …">
+    <meta name="description" content="镜像制作">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://guoke.co/blog/1.1-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95oc%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="果壳中的宇宙">
 <meta property="og:title" content="1.1 黑苹果单OC分区引导镜像制作">
-<meta property="og:description" content="写在前面： 需要在mac系统里进行，并在商店里下载好需要的镜像文件，这里以monterey12.6.7为例。 1、利用磁盘工具建立空白镜像，大小15GB，格式为扩展日志格式。 在终端里输入： diskutil list /dev/disk0 (internal, physical): #: TYPE NAME SIZE …">
+<meta property="og:description" content="镜像制作">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guoke.co/blog/1.1-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95oc%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/">
 <meta property="og:image" content="https://guoke.co/assets/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="1.1 黑苹果单OC分区引导镜像制作">
-<meta name="twitter:description" content="写在前面： 需要在mac系统里进行，并在商店里下载好需要的镜像文件，这里以monterey12.6.7为例。 1、利用磁盘工具建立空白镜像，大小15GB，格式为扩展日志格式。 在终端里输入： diskutil list /dev/disk0 (internal, physical): #: TYPE NAME SIZE …">
+<meta name="twitter:description" content="镜像制作">
 <meta name="twitter:image" content="https://guoke.co/assets/images/og-image.png">
 <meta property="article:published_time" content="2023-06-16T13:30:52&#43;08:00">
 <meta property="article:modified_time" content="2023-06-16T13:30:52&#43;08:00">
 <meta property="article:tag" content="黑苹果">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-16T13:30:52+08:00","datePublished":"2023-06-16T13:30:52+08:00","description":"写在前面： 需要在mac系统里进行，并在商店里下载好需要的镜像文件，这里以monterey12.6.7为例。 1、利用磁盘工具建立空白镜像，大小15GB，格式为扩展日志格式。 在终端里输入： diskutil list /dev/disk0 (internal, physical): #: TYPE NAME SIZE …","headline":"1.1 黑苹果单OC分区引导镜像制作","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/1.1-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95oc%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/","@type":"WebPage"},"name":"1.1 黑苹果单OC分区引导镜像制作","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/1.1-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95oc%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-16T13:30:52+08:00","datePublished":"2023-06-16T13:30:52+08:00","description":"镜像制作","headline":"1.1 黑苹果单OC分区引导镜像制作","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/1.1-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95oc%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/","@type":"WebPage"},"name":"1.1 黑苹果单OC分区引导镜像制作","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/1.1-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95oc%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/"}</script>
 
     <meta name="color-scheme" content="light dark">
     <title>1.1 黑苹果单OC分区引导镜像制作 · 果壳中的宇宙</title>
@@ -96,7 +96,7 @@
       <div class="post-page-header-inner">
         
         <h1>1.1 黑苹果单OC分区引导镜像制作</h1>
-        
+        <p>镜像制作</p>
       </div>
     </header>
     <div class="post-page-meta article-content-width">
@@ -140,11 +140,13 @@
 <p>#:                       TYPE NAME                    SIZE       IDENTIFIER</p>
 <p>0:      GUID_partition_scheme                        +15.0 GB    disk2</p>
 <p>1:                        EFI ⁨EFI⁩                     209.7 MB   disk2s1</p>
-<p>2:                  Apple_HFS ⁨mi⁩                      14.7 GB    disk2s2</p></blockquote>
+<p>2:                  Apple_HFS ⁨mi⁩                      14.7 GB    disk2s2</p>
+</blockquote>
 <p>由上面可见建立的新的空白镜像文件disk2分为两部分：EFI分区和苹果镜像分区。将苹果镜像分区进行分区（一般包含PE分区和OC引导分区，即所谓双分区），这里只制作OC引导单分区。在终端里输入以下命令</p>
 <blockquote>
 <p>sudo diskutil splitPartition disk2s2 JHFS+ macOS 14.7GB  #单OC分区</p>
-<p>sudo diskutil splitPartition disk2s2 2 MS-DOS PE 1g JHFS+ macOS 13.7GB #双分区OC+PE</p></blockquote>
+<p>sudo diskutil splitPartition disk2s2 2 MS-DOS PE 1g JHFS+ macOS 13.7GB #双分区OC+PE</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo diskutil splitPartition disk2s2 JHFS+ macOS 14.7GB
 </span></span></code></pre></div><p><code>Password:</code></p>
 <p>执行过程中需要输入你的开机账户密码。</p>
@@ -161,7 +163,8 @@
 <p>#:                       TYPE NAME                    SIZE       IDENTIFIER</p>
 <p>0:      GUID_partition_scheme                        +15.0 GB    disk2</p>
 <p>1:                        EFI ⁨EFI⁩                     209.7 MB   disk2s1</p>
-<p>2:                  Apple_HFS ⁨macOS⁩                   14.7 GB    disk2s2</p></blockquote>
+<p>2:                  Apple_HFS ⁨macOS⁩                   14.7 GB    disk2s2</p>
+</blockquote>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/1.1%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95OC%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/1.1%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95OC%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C02.webp" alt="1.1黑苹果单OC分区引导镜像制作02"></p>
 <h4 id="2将下载好的苹果镜像写入空白镜像">2、将下载好的苹果镜像写入空白镜像</h4>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/1.1%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95OC%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C/1.1%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%8D%95OC%E5%88%86%E5%8C%BA%E5%BC%95%E5%AF%BC%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C03.webp" alt="1.1黑苹果单OC分区引导镜像制作03"></p>
@@ -182,7 +185,8 @@
 <p>Making disk bootable&hellip;</p>
 <p>Copying to disk: 0%&hellip; 10%&hellip; 20%&hellip; 30%&hellip; 40%&hellip; 50%&hellip; 60%&hellip; 70%&hellip; 80%&hellip; 90%&hellip; 100%</p>
 <p>Install media now available at &ldquo;/Volumes/Install macOS Monterey&rdquo;</p>
-<p>kai@kaideair ~ %</p></blockquote>
+<p>kai@kaideair ~ %</p>
+</blockquote>
 <h4 id="3至此单oc引导黑苹果镜像制作完成">3、至此，单OC引导黑苹果镜像制作完成。</h4>
             <footer class="post-page-footer">
               <p>文章分类在 <a href="/categories//"></a></p>

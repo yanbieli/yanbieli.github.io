@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="准备 Kexts 基本概念 Kext 的英文全称叫做 Kernel Extension，即内核扩展，我们可以通俗的理解为这个就是 macOS 的驱动，使用方法只需要将这些 kext 文件放入到 EFI/OC/kexts 文件夹下面，然后编辑 OC 配置文件加载这些 kexts 并调节好顺序即可。 下载 Kexts 下面 …">
+    <meta name="description" content="准备工作">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://guoke.co/blog/2.4-%E5%87%86%E5%A4%87kexts/">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="果壳中的宇宙">
 <meta property="og:title" content="2.4 准备Kexts">
-<meta property="og:description" content="准备 Kexts 基本概念 Kext 的英文全称叫做 Kernel Extension，即内核扩展，我们可以通俗的理解为这个就是 macOS 的驱动，使用方法只需要将这些 kext 文件放入到 EFI/OC/kexts 文件夹下面，然后编辑 OC 配置文件加载这些 kexts 并调节好顺序即可。 下载 Kexts 下面 …">
+<meta property="og:description" content="准备工作">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guoke.co/blog/2.4-%E5%87%86%E5%A4%87kexts/">
 <meta property="og:image" content="https://guoke.co/assets/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="2.4 准备Kexts">
-<meta name="twitter:description" content="准备 Kexts 基本概念 Kext 的英文全称叫做 Kernel Extension，即内核扩展，我们可以通俗的理解为这个就是 macOS 的驱动，使用方法只需要将这些 kext 文件放入到 EFI/OC/kexts 文件夹下面，然后编辑 OC 配置文件加载这些 kexts 并调节好顺序即可。 下载 Kexts 下面 …">
+<meta name="twitter:description" content="准备工作">
 <meta name="twitter:image" content="https://guoke.co/assets/images/og-image.png">
 <meta property="article:published_time" content="2023-06-19T19:44:55&#43;08:00">
 <meta property="article:modified_time" content="2023-06-19T19:44:55&#43;08:00">
 <meta property="article:tag" content="黑苹果">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-19T19:44:55+08:00","datePublished":"2023-06-19T19:44:55+08:00","description":"准备 Kexts 基本概念 Kext 的英文全称叫做 Kernel Extension，即内核扩展，我们可以通俗的理解为这个就是 macOS 的驱动，使用方法只需要将这些 kext 文件放入到 EFI/OC/kexts 文件夹下面，然后编辑 OC 配置文件加载这些 kexts 并调节好顺序即可。 下载 Kexts 下面 …","headline":"2.4 准备Kexts","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/2.4-%E5%87%86%E5%A4%87kexts/","@type":"WebPage"},"name":"2.4 准备Kexts","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/2.4-%E5%87%86%E5%A4%87kexts/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-19T19:44:55+08:00","datePublished":"2023-06-19T19:44:55+08:00","description":"准备工作","headline":"2.4 准备Kexts","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/2.4-%E5%87%86%E5%A4%87kexts/","@type":"WebPage"},"name":"2.4 准备Kexts","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/2.4-%E5%87%86%E5%A4%87kexts/"}</script>
 
     <meta name="color-scheme" content="light dark">
     <title>2.4 准备Kexts · 果壳中的宇宙</title>
@@ -96,7 +96,7 @@
       <div class="post-page-header-inner">
         
         <h1>2.4 准备Kexts</h1>
-        
+        <p>准备工作</p>
       </div>
     </header>
     <div class="post-page-meta article-content-width">
@@ -140,7 +140,8 @@
 <li>使用 Github 镜像站点下载</li>
 <li>使用别人已配置好的 EFI 文件夹里面的文件，直接拿来使用</li>
 <li>办法总比困难多，不要遇到一点点小挫折就放弃</li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <h2 id="kexts-的分类">Kexts 的分类</h2>
 <h3 id="必备驱动">必备驱动</h3>
 <p>必备的 kexts 如果缺失的话，你的黑苹果系统就无法启动了</p>
@@ -271,7 +272,8 @@
 <li>支持后面新的 400、500 系列主板的支持</li>
 </ul>
 <p>说到黑苹果小兵，国光我也很佩服这样的人，初次接触认识他的时候，我还以为是一个 30 多岁的中年人，结果后面才知道他的儿子已经上大学了，而且他也快到了退休的年龄。</p>
-<p>黑果小兵也像 RehabMan 一样，写了很多黑苹果教程文章，也开源了很多机型的驱动，而且常年来一直坚持提供黑苹果懒人镜像的下载包，最关键的是都快退休的年龄了，还坚持做黑苹果这个比较“时髦”的技术，真的厉害了，不知道国光我老的时候，还可以坚持做这些吗？哈哈~ 如果黑苹果技术还存在的话。</p></blockquote>
+<p>黑果小兵也像 RehabMan 一样，写了很多黑苹果教程文章，也开源了很多机型的驱动，而且常年来一直坚持提供黑苹果懒人镜像的下载包，最关键的是都快退休的年龄了，还坚持做黑苹果这个比较“时髦”的技术，真的厉害了，不知道国光我老的时候，还可以坚持做这些吗？哈哈~ 如果黑苹果技术还存在的话。</p>
+</blockquote>
 <h3 id="有线网卡驱动">有线网卡驱动</h3>
 <ul>
 <li><a href="https://github.com/Mieze/AtherosE2200Ethernet/releases"><strong>AtherosE2200Ethernet.kext</strong></a>
@@ -333,7 +335,8 @@
 <li>需要 OS X 10.10 或更新版本</li>
 </ul>
 </li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <blockquote>
 <p>一些比较古老的百兆有线网卡驱动</p>
 <ul>
@@ -356,7 +359,8 @@
 <li>需要 OS X 10.6 或更新版本</li>
 </ul>
 </li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <h3 id="无线网卡驱动">无线网卡驱动</h3>
 <h4 id="intel-无线网卡系列">Intel 无线网卡系列</h4>
 <p>国内 <a href="https://github.com/zxystd">zxystd</a> 大佬从 Linux OpenBSD 移植的驱动，非常硬核，完成度很高，接力也都可以正常使用，隔空投送目前只能识别，暂时还无法传输文件，不过已经很厉害了。</p>
@@ -396,7 +400,8 @@
 </li>
 </ul>
 <blockquote>
-<p><strong>博通网卡的几个细节，Big Sur 以及后面的系统由于驱动有点异常，需要手动删除</strong> <em>AirPortBrcm4360_Injector.kext</em></p></blockquote>
+<p><strong>博通网卡的几个细节，Big Sur 以及后面的系统由于驱动有点异常，需要手动删除</strong> <em>AirPortBrcm4360_Injector.kext</em></p>
+</blockquote>
 <p>蓝牙加载需要一定顺序，下面是 10.15+ 系统的蓝牙加载顺序 <code>Kernel -&gt; Add</code>： 1. BrcmBluetoothInjector.kext 2. BrcmFirmwareData.kext 3. BrcmPatchRAM3.kext</p>
 <p>macOS 12 后蓝牙驱动的姿势又有小变化，详细可参考：<a href="https://ziyue.tech/2023/06/19/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/2.4.2macOS%E8%93%9D%E7%89%99%E8%AE%BE%E7%BD%AE/">macOS 12 蓝牙</a></p>
 <h3 id="其他驱动">其他驱动</h3>

@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="配置ACPI 通过上一节准备工作的配置，我们的 SSDT 应该都已经加载进来了，此时一般调整下 Quiks（怪癖）即可，少数的 SSDT 需要打对应的补丁才可以生效。 完整的 Quiks 怪癖 因为各个平台的版本不太一样，在详细说明之前写来一个 OC 0.7.3 完整的 Quiks 怪癖说明，这样心里大家设置的时候心里 …">
+    <meta name="description" content="配置OC">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://guoke.co/blog/3.1-%E9%85%8D%E7%BD%AEacpi/">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="果壳中的宇宙">
 <meta property="og:title" content="3.1 配置ACPI">
-<meta property="og:description" content="配置ACPI 通过上一节准备工作的配置，我们的 SSDT 应该都已经加载进来了，此时一般调整下 Quiks（怪癖）即可，少数的 SSDT 需要打对应的补丁才可以生效。 完整的 Quiks 怪癖 因为各个平台的版本不太一样，在详细说明之前写来一个 OC 0.7.3 完整的 Quiks 怪癖说明，这样心里大家设置的时候心里 …">
+<meta property="og:description" content="配置OC">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guoke.co/blog/3.1-%E9%85%8D%E7%BD%AEacpi/">
 <meta property="og:image" content="https://guoke.co/assets/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="3.1 配置ACPI">
-<meta name="twitter:description" content="配置ACPI 通过上一节准备工作的配置，我们的 SSDT 应该都已经加载进来了，此时一般调整下 Quiks（怪癖）即可，少数的 SSDT 需要打对应的补丁才可以生效。 完整的 Quiks 怪癖 因为各个平台的版本不太一样，在详细说明之前写来一个 OC 0.7.3 完整的 Quiks 怪癖说明，这样心里大家设置的时候心里 …">
+<meta name="twitter:description" content="配置OC">
 <meta name="twitter:image" content="https://guoke.co/assets/images/og-image.png">
 <meta property="article:published_time" content="2023-06-23T08:26:11&#43;08:00">
 <meta property="article:modified_time" content="2023-06-23T08:26:11&#43;08:00">
 <meta property="article:tag" content="黑苹果">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-23T08:26:11+08:00","datePublished":"2023-06-23T08:26:11+08:00","description":"配置ACPI 通过上一节准备工作的配置，我们的 SSDT 应该都已经加载进来了，此时一般调整下 Quiks（怪癖）即可，少数的 SSDT 需要打对应的补丁才可以生效。 完整的 Quiks 怪癖 因为各个平台的版本不太一样，在详细说明之前写来一个 OC 0.7.3 完整的 Quiks 怪癖说明，这样心里大家设置的时候心里 …","headline":"3.1 配置ACPI","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/3.1-%E9%85%8D%E7%BD%AEacpi/","@type":"WebPage"},"name":"3.1 配置ACPI","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/3.1-%E9%85%8D%E7%BD%AEacpi/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-23T08:26:11+08:00","datePublished":"2023-06-23T08:26:11+08:00","description":"配置OC","headline":"3.1 配置ACPI","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/3.1-%E9%85%8D%E7%BD%AEacpi/","@type":"WebPage"},"name":"3.1 配置ACPI","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/3.1-%E9%85%8D%E7%BD%AEacpi/"}</script>
 
     <meta name="color-scheme" content="light dark">
     <title>3.1 配置ACPI · 果壳中的宇宙</title>
@@ -96,7 +96,7 @@
       <div class="post-page-header-inner">
         
         <h1>3.1 配置ACPI</h1>
-        
+        <p>配置OC</p>
       </div>
     </header>
     <div class="post-page-meta article-content-width">
@@ -176,40 +176,40 @@
 <h3 id="clarksfieldarrandale">Clarksfield、Arrandale</h3>
 <p>因为使用了 SSDT-XOSI 的原因，所以还需要配合 <strong>Change _OSI to XOSI</strong> 补丁来使用：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Comment</th>
-          <th>String</th>
-          <th>Change _OSI to XOSI</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Enabled</td>
-          <td>Boolean</td>
-          <td>YES</td>
-      </tr>
-      <tr>
-          <td>Count</td>
-          <td>Number</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Limit</td>
-          <td>Number</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Find</td>
-          <td>Data</td>
-          <td><code>5f4f5349</code></td>
-      </tr>
-      <tr>
-          <td>Replace</td>
-          <td>Data</td>
-          <td><code>584f5349</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Comment</th>
+					<th>String</th>
+					<th>Change _OSI to XOSI</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Enabled</td>
+					<td>Boolean</td>
+					<td>YES</td>
+			</tr>
+			<tr>
+					<td>Count</td>
+					<td>Number</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>Limit</td>
+					<td>Number</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>Find</td>
+					<td>Data</td>
+					<td><code>5f4f5349</code></td>
+			</tr>
+			<tr>
+					<td>Replace</td>
+					<td>Data</td>
+					<td><code>584f5349</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>OCC 里面也集成了这个 XOSI 补丁，只需要一键就可以补丁并启用：</p>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.1%E9%85%8D%E7%BD%AEACPI/3.1%E9%85%8D%E7%BD%AEACPI02.webp" alt="3.1配置ACPI02"></p>
@@ -221,40 +221,40 @@
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.1%E9%85%8D%E7%BD%AEACPI/3.1%E9%85%8D%E7%BD%AEACPI03.webp" alt="3.1配置ACPI03"></p>
 <p>因为使用了 SSDT-XOSI 的原因，所以还需要配合 <strong>Change _OSI to XOSI</strong> 补丁来使用：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Comment</th>
-          <th>String</th>
-          <th>Change _OSI to XOSI</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Enabled</td>
-          <td>Boolean</td>
-          <td>YES</td>
-      </tr>
-      <tr>
-          <td>Count</td>
-          <td>Number</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Limit</td>
-          <td>Number</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Find</td>
-          <td>Data</td>
-          <td><code>5f4f5349</code></td>
-      </tr>
-      <tr>
-          <td>Replace</td>
-          <td>Data</td>
-          <td><code>584f5349</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Comment</th>
+					<th>String</th>
+					<th>Change _OSI to XOSI</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Enabled</td>
+					<td>Boolean</td>
+					<td>YES</td>
+			</tr>
+			<tr>
+					<td>Count</td>
+					<td>Number</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>Limit</td>
+					<td>Number</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>Find</td>
+					<td>Data</td>
+					<td><code>5f4f5349</code></td>
+			</tr>
+			<tr>
+					<td>Replace</td>
+					<td>Data</td>
+					<td><code>584f5349</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>OCC 里面也集成了这个 XOSI 补丁，只需要一键就可以补丁并启用：</p>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.1%E9%85%8D%E7%BD%AEACPI/3.1%E9%85%8D%E7%BD%AEACPI04.webp" alt="3.1配置ACPI04"></p>
@@ -262,40 +262,40 @@
 <h3 id="haswellbroadwellskylakekaby-lakecoffee-lake-whiskey-lakecoffee-lake-pluscomet-lakeicelake">Haswell、Broadwell、Skylake、Kaby Lake、Coffee Lake 、Whiskey Lake、Coffee Lake Plus、Comet Lake、Icelake</h3>
 <p>因为使用了 SSDT-XOSI 的原因，所以还需要配合 <strong>Change _OSI to XOSI</strong> 补丁来使用：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Comment</th>
-          <th>String</th>
-          <th>Change _OSI to XOSI</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Enabled</td>
-          <td>Boolean</td>
-          <td>YES</td>
-      </tr>
-      <tr>
-          <td>Count</td>
-          <td>Number</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Limit</td>
-          <td>Number</td>
-          <td>0</td>
-      </tr>
-      <tr>
-          <td>Find</td>
-          <td>Data</td>
-          <td><code>5f4f5349</code></td>
-      </tr>
-      <tr>
-          <td>Replace</td>
-          <td>Data</td>
-          <td><code>584f5349</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Comment</th>
+					<th>String</th>
+					<th>Change _OSI to XOSI</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Enabled</td>
+					<td>Boolean</td>
+					<td>YES</td>
+			</tr>
+			<tr>
+					<td>Count</td>
+					<td>Number</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>Limit</td>
+					<td>Number</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>Find</td>
+					<td>Data</td>
+					<td><code>5f4f5349</code></td>
+			</tr>
+			<tr>
+					<td>Replace</td>
+					<td>Data</td>
+					<td><code>584f5349</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>OCC 里面也集成了这个 XOSI 补丁，只需要一键就可以补丁并启用：</p>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.1%E9%85%8D%E7%BD%AEACPI/3.1%E9%85%8D%E7%BD%AEACPI05.webp" alt="3.1配置ACPI05"></p>

@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="配置DeviceProperties 设备配置通过专用缓冲区提供给 macOS，用于设置 PCI 设备属性，如英特尔缓冲帧补丁，声卡 Layout ID 等。当然声卡的 ID 也可以直接通过启动项添加 alcid=xx 这种形式来添加也是 OK 的。 寻找设备地址 不同的设备的硬件地址是不一样的， …">
+    <meta name="description" content="配置OC">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://guoke.co/blog/3.3-%E9%85%8D%E7%BD%AEdeviceproperties/">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="果壳中的宇宙">
 <meta property="og:title" content="3.3 配置DeviceProperties">
-<meta property="og:description" content="配置DeviceProperties 设备配置通过专用缓冲区提供给 macOS，用于设置 PCI 设备属性，如英特尔缓冲帧补丁，声卡 Layout ID 等。当然声卡的 ID 也可以直接通过启动项添加 alcid=xx 这种形式来添加也是 OK 的。 寻找设备地址 不同的设备的硬件地址是不一样的， …">
+<meta property="og:description" content="配置OC">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guoke.co/blog/3.3-%E9%85%8D%E7%BD%AEdeviceproperties/">
 <meta property="og:image" content="https://guoke.co/assets/images/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="3.3 配置DeviceProperties">
-<meta name="twitter:description" content="配置DeviceProperties 设备配置通过专用缓冲区提供给 macOS，用于设置 PCI 设备属性，如英特尔缓冲帧补丁，声卡 Layout ID 等。当然声卡的 ID 也可以直接通过启动项添加 alcid=xx 这种形式来添加也是 OK 的。 寻找设备地址 不同的设备的硬件地址是不一样的， …">
+<meta name="twitter:description" content="配置OC">
 <meta name="twitter:image" content="https://guoke.co/assets/images/og-image.png">
 <meta property="article:published_time" content="2023-06-28T20:20:39&#43;08:00">
 <meta property="article:modified_time" content="2023-06-28T20:20:39&#43;08:00">
 <meta property="article:tag" content="黑苹果">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-28T20:20:39+08:00","datePublished":"2023-06-28T20:20:39+08:00","description":"配置DeviceProperties 设备配置通过专用缓冲区提供给 macOS，用于设置 PCI 设备属性，如英特尔缓冲帧补丁，声卡 Layout ID 等。当然声卡的 ID 也可以直接通过启动项添加 alcid=xx 这种形式来添加也是 OK 的。 寻找设备地址 不同的设备的硬件地址是不一样的， …","headline":"3.3 配置DeviceProperties","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/3.3-%E9%85%8D%E7%BD%AEdeviceproperties/","@type":"WebPage"},"name":"3.3 配置DeviceProperties","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/3.3-%E9%85%8D%E7%BD%AEdeviceproperties/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"言别离"},"dateModified":"2023-06-28T20:20:39+08:00","datePublished":"2023-06-28T20:20:39+08:00","description":"配置OC","headline":"3.3 配置DeviceProperties","image":"https://guoke.co/assets/images/og-image.png","mainEntityOfPage":{"@id":"https://guoke.co/blog/3.3-%E9%85%8D%E7%BD%AEdeviceproperties/","@type":"WebPage"},"name":"3.3 配置DeviceProperties","publisher":{"@type":"Organization","name":"果壳中的宇宙"},"url":"https://guoke.co/blog/3.3-%E9%85%8D%E7%BD%AEdeviceproperties/"}</script>
 
     <meta name="color-scheme" content="light dark">
     <title>3.3 配置DeviceProperties · 果壳中的宇宙</title>
@@ -96,7 +96,7 @@
       <div class="post-page-header-inner">
         
         <h1>3.3 配置DeviceProperties</h1>
-        
+        <p>配置OC</p>
       </div>
     </header>
     <div class="post-page-meta article-content-width">
@@ -182,40 +182,40 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>AAPL,snb-platform-id</th>
-          <th>说明解释</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong><code>10000300</code></strong></td>
-          <td>当桌面 iGPU 用于驱动输出显示信号</td>
-      </tr>
-      <tr>
-          <td><strong><code>00000500</code></strong></td>
-          <td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>AAPL,snb-platform-id</th>
+					<th>说明解释</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong><code>10000300</code></strong></td>
+					<td>当桌面 iGPU 用于驱动输出显示信号</td>
+			</tr>
+			<tr>
+					<td><strong><code>00000500</code></strong></td>
+					<td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
+			</tr>
+	</tbody>
 </table>
 <table>
-  <thead>
-      <tr>
-          <th>device-id</th>
-          <th>说明解释</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong><code>26010000</code></strong></td>
-          <td>当桌面 iGPU 用于驱动输出显示信号</td>
-      </tr>
-      <tr>
-          <td><strong><code>02010000</code></strong></td>
-          <td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>device-id</th>
+					<th>说明解释</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong><code>26010000</code></strong></td>
+					<td>当桌面 iGPU 用于驱动输出显示信号</td>
+			</tr>
+			<tr>
+					<td><strong><code>02010000</code></strong></td>
+					<td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
+			</tr>
+	</tbody>
 </table>
 <p>下面是桌面 HD 3000 核显的最终配置的示例：</p>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties05.webp" alt="3.3DeviceProperties05"></p>
@@ -248,22 +248,22 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>AAPL,ig-platform-id</th>
-          <th>说明解释</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong><code>0A006601</code></strong></td>
-          <td>当桌面 iGPU 用于驱动输出显示信号</td>
-      </tr>
-      <tr>
-          <td><strong><code>07006201</code></strong></td>
-          <td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>AAPL,ig-platform-id</th>
+					<th>说明解释</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong><code>0A006601</code></strong></td>
+					<td>当桌面 iGPU 用于驱动输出显示信号</td>
+			</tr>
+			<tr>
+					<td><strong><code>07006201</code></strong></td>
+					<td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
+			</tr>
+	</tbody>
 </table>
 <p>台式机 HD 4000 核显的 AAPL,ig-platform-id 为 <code>0A006601</code></p>
 <ul>
@@ -273,23 +273,24 @@
 <li>无论是否使用 SSDT-IMEI，此属性仍然是必需的</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>3A1E0000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>3A1E0000</code></td>
+			</tr>
+	</tbody>
 </table>
 <blockquote>
-<p>如果是 7 系列主板（即 B75、Q75、Z75、H77、Q77、Z77），则不需要此项</p></blockquote>
+<p>如果是 7 系列主板（即 B75、Q75、Z75、H77、Q77、Z77），则不需要此项</p>
+</blockquote>
 <h3 id="haswellbroadwell">Haswell、Broadwell</h3>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties07.webp" alt="3.3DeviceProperties07"></p>
 <ul>
@@ -340,110 +341,110 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>AAPL,ig-platform-id</th>
-          <th>解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong><code>0300220D</code></strong></td>
-          <td>当桌面 iGPU 用于驱动输出显示信号</td>
-      </tr>
-      <tr>
-          <td><strong><code>04001204</code></strong></td>
-          <td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用</td>
-      </tr>
-      <tr>
-          <td><strong><code>07002216</code></strong></td>
-          <td>当桌面 iGPU 用于驱动输出显示信号的另一个可选 ID</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>AAPL,ig-platform-id</th>
+					<th>解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong><code>0300220D</code></strong></td>
+					<td>当桌面 iGPU 用于驱动输出显示信号</td>
+			</tr>
+			<tr>
+					<td><strong><code>04001204</code></strong></td>
+					<td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用</td>
+			</tr>
+			<tr>
+					<td><strong><code>07002216</code></strong></td>
+					<td>当桌面 iGPU 用于驱动输出显示信号的另一个可选 ID</td>
+			</tr>
+	</tbody>
 </table>
 <table>
-  <thead>
-      <tr>
-          <th>device-id</th>
-          <th>说明解释</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>12040000</code></td>
-          <td>HD 4600 核显的设备 ID</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>device-id</th>
+					<th>说明解释</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>12040000</code></td>
+					<td>HD 4600 核显的设备 ID</td>
+			</tr>
+	</tbody>
 </table>
 <p>下面是 HD 4400 核显的最终配置的示例：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AAPL,ig-platform-id</td>
-          <td>Data</td>
-          <td><code>0300220D</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-fbmem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>12040000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AAPL,ig-platform-id</td>
+					<td>Data</td>
+					<td><code>0300220D</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-fbmem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>12040000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties08.webp" alt="3.3DeviceProperties08"></p>
 <p>下面是 lris Pro 6200 核显的最终配置示例：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AAPL,ig-platform-id</td>
-          <td>Data</td>
-          <td><code>07002216</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-fbmem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AAPL,ig-platform-id</td>
+					<td>Data</td>
+					<td><code>07002216</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-fbmem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties09.webp" alt="3.3DeviceProperties09"></p>
 <h3 id="skylake">Skylake</h3>
@@ -496,76 +497,76 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>AAPL,ig-platform-id</th>
-          <th>解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong><code>00001219</code></strong></td>
-          <td>当桌面 iGPU 用于驱动显示器时使用</td>
-      </tr>
-      <tr>
-          <td><strong><code>01001219</code></strong></td>
-          <td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>AAPL,ig-platform-id</th>
+					<th>解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong><code>00001219</code></strong></td>
+					<td>当桌面 iGPU 用于驱动显示器时使用</td>
+			</tr>
+			<tr>
+					<td><strong><code>01001219</code></strong></td>
+					<td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
+			</tr>
+	</tbody>
 </table>
 <p>HD P530 核显用户需要注意的是，您的 iGPU 核显不受本机支持，因此您需要添加以下属性：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>1B190000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>1B190000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>下面是 HD P530 核显的最终配置示例：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AAPL,ig-platform-id</td>
-          <td>Data</td>
-          <td><code>00001219</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-fbmem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>1B190000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AAPL,ig-platform-id</td>
+					<td>Data</td>
+					<td><code>00001219</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-fbmem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>1B190000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties11.webp" alt="3.3DeviceProperties11"></p>
 <h3 id="kaby-lake">Kaby Lake</h3>
@@ -618,49 +619,49 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>AAPL,ig-platform-id</th>
-          <th>解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong><code>00001259</code></strong></td>
-          <td>当桌面 iGPU 用于驱动输出显示信号</td>
-      </tr>
-      <tr>
-          <td><strong><code>03001259</code></strong></td>
-          <td>当桌面 iGPU 仅用于计算任务且不驱动显示器时使用</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>AAPL,ig-platform-id</th>
+					<th>解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong><code>00001259</code></strong></td>
+					<td>当桌面 iGPU 用于驱动输出显示信号</td>
+			</tr>
+			<tr>
+					<td><strong><code>03001259</code></strong></td>
+					<td>当桌面 iGPU 仅用于计算任务且不驱动显示器时使用</td>
+			</tr>
+	</tbody>
 </table>
 <p>下面是 HD630 核显的最终配置示例：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AAPL,ig-platform-id</td>
-          <td>Data</td>
-          <td><code>00001259</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AAPL,ig-platform-id</td>
+					<td>Data</td>
+					<td><code>00001259</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties13.webp" alt="3.3DeviceProperties13"></p>
 <h3 id="coffee-lake">Coffee Lake</h3>
@@ -713,53 +714,53 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>AAPL,ig-platform-id</th>
-          <th>解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong><code>07009B3E</code></strong></td>
-          <td>当桌面 iGPU 用于驱动输出显示信号</td>
-      </tr>
-      <tr>
-          <td><strong><code>00009B3E</code></strong></td>
-          <td>如果<code>07009B3E</code> 不起作用的话，可以考虑使用这个 ID 看看</td>
-      </tr>
-      <tr>
-          <td><strong><code>0300913E</code></strong></td>
-          <td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>AAPL,ig-platform-id</th>
+					<th>解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong><code>07009B3E</code></strong></td>
+					<td>当桌面 iGPU 用于驱动输出显示信号</td>
+			</tr>
+			<tr>
+					<td><strong><code>00009B3E</code></strong></td>
+					<td>如果<code>07009B3E</code> 不起作用的话，可以考虑使用这个 ID 看看</td>
+			</tr>
+			<tr>
+					<td><strong><code>0300913E</code></strong></td>
+					<td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
+			</tr>
+	</tbody>
 </table>
 <p>下面是 HD630 核显的最终配置示例：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AAPL,ig-platform-id</td>
-          <td>Data</td>
-          <td><code>07009B3E</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AAPL,ig-platform-id</td>
+					<td>Data</td>
+					<td><code>07009B3E</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties15.webp" alt="3.3DeviceProperties15"></p>
 <h3 id="comet-lake">Comet Lake</h3>
@@ -812,53 +813,53 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>AAPL,ig-platform-id</th>
-          <th>解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong><code>07009B3E</code></strong></td>
-          <td>当桌面 iGPU 用于驱动输出显示信号</td>
-      </tr>
-      <tr>
-          <td><strong><code>00009B3E</code></strong></td>
-          <td>如果<code>07009B3E</code> 不起作用的话，可以考虑使用这个 ID 看看</td>
-      </tr>
-      <tr>
-          <td><strong><code>0300C89B</code></strong></td>
-          <td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>AAPL,ig-platform-id</th>
+					<th>解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong><code>07009B3E</code></strong></td>
+					<td>当桌面 iGPU 用于驱动输出显示信号</td>
+			</tr>
+			<tr>
+					<td><strong><code>00009B3E</code></strong></td>
+					<td>如果<code>07009B3E</code> 不起作用的话，可以考虑使用这个 ID 看看</td>
+			</tr>
+			<tr>
+					<td><strong><code>0300C89B</code></strong></td>
+					<td>核显仅计算使用而不驱动输出显示信号（有独显的时候建议使用）</td>
+			</tr>
+	</tbody>
 </table>
 <p>下面是 HD630 核显的最终配置示例：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>AAPL,ig-platform-id</td>
-          <td>Data</td>
-          <td><code>07009B3E</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>AAPL,ig-platform-id</td>
+					<td>Data</td>
+					<td><code>07009B3E</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties17.webp" alt="3.3DeviceProperties17"></p>
 <h2 id="intel-笔记本平台">Intel 笔记本平台</h2>
@@ -899,25 +900,25 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Property</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-singlelink</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Property</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-singlelink</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="sandy-bridge-1">Sandy Bridge</h3>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties19.webp" alt="3.3DeviceProperties19"></p>
@@ -950,25 +951,25 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">AAPL,snb-platform-id</th>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>00000100</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">笔记本电脑使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>10000300</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">Intel NUC 使用</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">AAPL,snb-platform-id</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong><code>00000100</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">笔记本电脑使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>10000300</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">Intel NUC 使用</td>
+			</tr>
+	</tbody>
 </table>
 <ul>
 <li>PciRoot(0x0)/Pci(0x16,0x0)
@@ -981,20 +982,20 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>3A1C0000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>3A1C0000</code></td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="ivy-bridge-1">Ivy Bridge</h3>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties20.webp" alt="3.3DeviceProperties20"></p>
@@ -1064,35 +1065,35 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">AAPL,ig-platform-id</th>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>03006601</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">1366*768 或者更低分辨率的显示器推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>04006601</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">1600*900 或者更高分辨率的显示器推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>09006601</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">如果上面两个 ID 不行的话，可以试试看，主要是与某些 eDP 显示器配合使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>0B006601</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">Intel NUC 推荐使用</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">AAPL,ig-platform-id</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong><code>03006601</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">1366*768 或者更低分辨率的显示器推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>04006601</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">1600*900 或者更高分辨率的显示器推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>09006601</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">如果上面两个 ID 不行的话，可以试试看，主要是与某些 eDP 显示器配合使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>0B006601</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">Intel NUC 推荐使用</td>
+			</tr>
+	</tbody>
 </table>
 <p>缓冲区的设置如下：</p>
 <ul>
@@ -1186,69 +1187,69 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">AAPL,ig-platform-id</th>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>0500260A</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">HD 5000、HD 5100 和 HD 5200 核显推荐的 ID 值</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>0600260A</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">HD 4200、HD 4400 和 HD 4600 核显推荐的 ID 值，需要配合 Device-id</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>0300220D</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">推荐所有的 Hasewell 架构的 NUC 使用，核显推荐的 ID 值。需要配合 Device-id</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">AAPL,ig-platform-id</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong><code>0500260A</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">HD 5000、HD 5100 和 HD 5200 核显推荐的 ID 值</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>0600260A</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">HD 4200、HD 4400 和 HD 4600 核显推荐的 ID 值，需要配合 Device-id</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>0300220D</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">推荐所有的 Hasewell 架构的 NUC 使用，核显推荐的 ID 值。需要配合 Device-id</td>
+			</tr>
+	</tbody>
 </table>
 <p>缓冲区的设置如下：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-cursormem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-cursormem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>针对 HD 4200, HD 4400 and HD 4600 核显配套使用的 Device-id 值：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>12040000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>12040000</code></td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="broadwell">Broadwell</h3>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties22.webp" alt="3.3DeviceProperties22"></p>
@@ -1294,69 +1295,69 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">AAPL,ig-platform-id</th>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>06002616</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">推荐大多数的笔记本使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>02001616</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">推荐 Broadwell 架构的 NUC 使用</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">AAPL,ig-platform-id</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong><code>06002616</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">推荐大多数的笔记本使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>02001616</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">推荐 Broadwell 架构的 NUC 使用</td>
+			</tr>
+	</tbody>
 </table>
 <p>如果你的显卡是 HD 5600 的话，一般还需要伪造一下 device-id 值：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>data</td>
-          <td>26160000</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>data</td>
+					<td>26160000</td>
+			</tr>
+	</tbody>
 </table>
 <p>缓冲区的设置如下：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-fbmem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-fbmem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="skylake-1">Skylake</h3>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties23.webp" alt="3.3DeviceProperties23"></p>
@@ -1408,111 +1409,111 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">AAPL,ig-platform-id</th>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>00001619</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">HD 515, HD 520, HD 530, HD 540, HD 550 and P530 核显推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>00001E19</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">如果你上面的 ID 不行的话，可以尝试这个</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>00001B19</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">HD 510 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>00001E19</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">HD 515 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>02001619</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">HD 520/530 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>02002619</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">HD 540/550 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>05003B19</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">HD 580 推荐使用</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">AAPL,ig-platform-id</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong><code>00001619</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">HD 515, HD 520, HD 530, HD 540, HD 550 and P530 核显推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>00001E19</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">如果你上面的 ID 不行的话，可以尝试这个</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>00001B19</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">HD 510 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>00001E19</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">HD 515 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>02001619</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">HD 520/530 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>02002619</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">HD 540/550 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>05003B19</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">HD 580 推荐使用</td>
+			</tr>
+	</tbody>
 </table>
 <p>如果你的核显为 HD 510 的话呢，一般还需要伪造一下 device-id 值：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>02190000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>02190000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>如果你的核显为 HD 550、P530 的话呢，一般还需要伪造一下 device-id 值：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>16190000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>16190000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>缓冲区的设置如下：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-fbmem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-fbmem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="kaby-lake-1">Kaby Lake</h3>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties24.webp" alt="3.3DeviceProperties24"></p>
@@ -1564,62 +1565,62 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">AAPL,ig-platform-id</th>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>00001B59</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">HD 615, HD 620, HD 630, HD 640 and HD 650 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>00001659</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">如果 <code>00001B59</code> 无法加速的话，可以尝试一下这个值</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>0000C087</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">推荐用于 Amber Lake 的 UHD 617 和 Kaby Lake-R 的 UHD 62</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>00001E59</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">HD 615 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>00001B59</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">HD 630推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>02002659</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">HD 640/650 推荐使用</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">AAPL,ig-platform-id</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong><code>00001B59</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">HD 615, HD 620, HD 630, HD 640 and HD 650 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>00001659</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">如果 <code>00001B59</code> 无法加速的话，可以尝试一下这个值</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>0000C087</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">推荐用于 Amber Lake 的 UHD 617 和 Kaby Lake-R 的 UHD 62</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>00001E59</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">HD 615 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>00001B59</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">HD 630推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>02002659</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">HD 640/650 推荐使用</td>
+			</tr>
+	</tbody>
 </table>
 <p>如果你的核显为 HD 620 的话呢，一般还需要伪造一下 device-id 值：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>16590000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>16590000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>所有的 HD 6XX 系列（UHD 没问题），输出会存在一些小问题，可能会导致锁定或者内核崩溃，下面的一些缓冲帧补丁可以考虑一下：</p>
 <ul>
@@ -1632,30 +1633,30 @@
 </ul>
 <p>其他的一些缓冲帧设置：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-fbmem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-fbmem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="coffee-lakewhiskey-lake">Coffee Lake、Whiskey Lake</h3>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties25.webp" alt="3.3DeviceProperties25"></p>
@@ -1707,96 +1708,96 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">AAPL,ig-platform-id</th>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>0900A53E</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">UHD 630 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>00009B3E</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">UHD 620 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>07009B3E</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">UHD 620/630 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>0000A53E</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">UHD 655 推荐使用</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">AAPL,ig-platform-id</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong><code>0900A53E</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">UHD 630 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>00009B3E</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">UHD 620 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>07009B3E</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">UHD 620/630 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>0000A53E</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">UHD 655 推荐使用</td>
+			</tr>
+	</tbody>
 </table>
 <p>UHD 630 可以尝试使用以下 device-id 提高稳定性：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>9B3E0000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>9B3E0000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>Coffee Lake CPU UHD 620 可以尝试使用以下 device-id 提高稳定性：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>9B3E0000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>9B3E0000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>其他缓冲区设置的参考设置如下：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-fbmem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-fbmem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="coffee-lake-plus-and-comet-lake">Coffee Lake Plus and Comet Lake</h3>
 <p><img src="https://tuchuang.guoke.co/guoke/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/3.3DeviceProperties/3.3DeviceProperties26.webp" alt="3.3DeviceProperties26"></p>
@@ -1848,96 +1849,96 @@
 </li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">AAPL,ig-platform-id</th>
-          <th style="text-align: left">Type</th>
-          <th style="text-align: left">解释说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>0900A53E</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">UHD 630 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>00009B3E</code></strong></td>
-          <td style="text-align: left">Laptop</td>
-          <td style="text-align: left">UHD 620 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>07009B3E</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">UHD 620/630 推荐使用</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>0000A53E</code></strong></td>
-          <td style="text-align: left">NUC</td>
-          <td style="text-align: left">UHD 655 推荐使用</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">AAPL,ig-platform-id</th>
+					<th style="text-align: left">Type</th>
+					<th style="text-align: left">解释说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong><code>0900A53E</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">UHD 630 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>00009B3E</code></strong></td>
+					<td style="text-align: left">Laptop</td>
+					<td style="text-align: left">UHD 620 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>07009B3E</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">UHD 620/630 推荐使用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong><code>0000A53E</code></strong></td>
+					<td style="text-align: left">NUC</td>
+					<td style="text-align: left">UHD 655 推荐使用</td>
+			</tr>
+	</tbody>
 </table>
 <p>UHD 630 可以尝试使用以下 device-id 提高稳定性：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>9B3E0000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>9B3E0000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>Comet Lake CPU UHD 620 可以尝试使用以下 device-id 提高稳定性：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>device-id</td>
-          <td>Data</td>
-          <td><code>9B3E0000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>device-id</td>
+					<td>Data</td>
+					<td><code>9B3E0000</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>其他缓冲区设置的参考设置如下：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Key</th>
-          <th>Type</th>
-          <th>Value</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>framebuffer-patch-enable</td>
-          <td>Data</td>
-          <td><code>01000000</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-stolenmem</td>
-          <td>Data</td>
-          <td><code>00003001</code></td>
-      </tr>
-      <tr>
-          <td>framebuffer-fbmem</td>
-          <td>Data</td>
-          <td><code>00009000</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Key</th>
+					<th>Type</th>
+					<th>Value</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>framebuffer-patch-enable</td>
+					<td>Data</td>
+					<td><code>01000000</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-stolenmem</td>
+					<td>Data</td>
+					<td><code>00003001</code></td>
+			</tr>
+			<tr>
+					<td>framebuffer-fbmem</td>
+					<td>Data</td>
+					<td><code>00009000</code></td>
+			</tr>
+	</tbody>
 </table>
             <footer class="post-page-footer">
               <p>文章分类在 <a href="/categories//"></a></p>
