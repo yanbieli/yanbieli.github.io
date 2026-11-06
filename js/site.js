@@ -143,12 +143,13 @@
   let searchMatches = [];
   let searchPage = 1;
   const searchTerms = (query) => query.trim().toLocaleLowerCase("zh-CN").split(/\s+/).filter(Boolean);
+  const searchHighlightPattern = (terms) => terms
+    .filter(Boolean)
+    .sort((left, right) => right.length - left.length)
+    .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|");
   const appendHighlightedText = (element, text, terms) => {
-    const pattern = terms
-      .filter(Boolean)
-      .sort((left, right) => right.length - left.length)
-      .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-      .join("|");
+    const pattern = searchHighlightPattern(terms);
     if (!pattern) {
       element.textContent = text;
       return;
@@ -167,6 +168,111 @@
     }
     element.append(document.createTextNode(text.slice(cursor)));
   };
+  const appendSearchExcerpts = (element, text, terms, fallback) => {
+    const pattern = searchHighlightPattern(terms);
+    if (!pattern) {
+      element.textContent = text;
+      return;
+    }
+
+    const matcher = new RegExp(pattern, "giu");
+    const matches = [];
+    for (const match of text.matchAll(matcher)) {
+      matches.push({ start: match.index ?? 0, end: (match.index ?? 0) + match[0].length });
+    }
+
+    if (!matches.length) {
+      appendHighlightedText(element, fallback, terms);
+      return;
+    }
+
+    const ranges = [];
+    matches.forEach((match, hit) => {
+      const start = Math.max(0, match.start - 8);
+      const end = Math.min(text.length, match.end + 8);
+      const previous = ranges[ranges.length - 1];
+      if (previous && start <= previous.end) {
+        previous.end = Math.max(previous.end, end);
+        previous.lastHit = hit;
+      } else ranges.push({ start, end, firstHit: hit, lastHit: hit });
+    });
+    const maxLength = Math.max(100, Math.floor(element.clientWidth / 10 * 5));
+    const excerpts = [];
+    let excerptLength = 0;
+    for (const range of ranges) {
+      const needsEllipsis = excerpts.length > 0 || range.start > 0;
+      const nextLength = range.end - range.start + (needsEllipsis ? 1 : 0);
+      if (excerpts.length && excerptLength + nextLength > maxLength) break;
+      excerpts.push(range);
+      excerptLength += nextLength;
+    }
+    excerpts.forEach(({ start, end }, index) => {
+      if (index > 0 || start > 0) element.append(document.createTextNode("…"));
+      let cursor = start;
+      matches.forEach((match, hit) => {
+        if (hit < ranges[index].firstHit || hit > ranges[index].lastHit) return;
+        element.append(document.createTextNode(text.slice(cursor, match.start)));
+        const link = document.createElement("a");
+        link.className = "quick-search-hit";
+        link.href = `${element.closest("[data-search-url]").dataset.searchUrl}#search=${encodeURIComponent(searchInput?.value.trim() || "")}&hit=${hit}`;
+        const highlight = document.createElement("mark");
+        highlight.className = "quick-search-highlight";
+        highlight.textContent = text.slice(match.start, match.end);
+        link.append(highlight);
+        element.append(link);
+        cursor = match.end;
+      });
+      element.append(document.createTextNode(text.slice(cursor, end)));
+    });
+    if (excerpts.length < ranges.length || excerpts[excerpts.length - 1].end < text.length) {
+      element.append(document.createTextNode("…"));
+    }
+  };
+  const highlightArticleSearch = () => {
+    if (!location.hash.startsWith("#search=")) return;
+    const query = new URLSearchParams(location.hash.slice(1)).get("search") || "";
+    const terms = searchTerms(query);
+    const article = document.querySelector("#article-content");
+    if (!article || !terms.length) return;
+
+    const matcher = new RegExp(`(${searchHighlightPattern(terms)})`, "giu");
+    const targetHit = Number.parseInt(new URLSearchParams(location.hash.slice(1)).get("hit") || "0", 10);
+    const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    while (walker.nextNode()) {
+      if (matcher.test(walker.currentNode.textContent)) textNodes.push(walker.currentNode);
+      matcher.lastIndex = 0;
+    }
+
+    let firstMatch;
+    let hit = 0;
+    textNodes.forEach((textNode) => {
+      const text = textNode.textContent;
+      const fragment = document.createDocumentFragment();
+      let cursor = 0;
+      for (const match of text.matchAll(matcher)) {
+        const index = match.index ?? 0;
+        fragment.append(document.createTextNode(text.slice(cursor, index)));
+        const highlight = document.createElement("mark");
+        highlight.className = "quick-search-highlight";
+        highlight.textContent = match[0];
+        fragment.append(highlight);
+        firstMatch ||= highlight;
+        if (hit === targetHit) firstMatch = highlight;
+        hit += 1;
+        cursor = index + match[0].length;
+      }
+      fragment.append(document.createTextNode(text.slice(cursor)));
+      textNode.replaceWith(fragment);
+    });
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    (firstMatch || article).scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: firstMatch ? "center" : "start",
+    });
+  };
+  highlightArticleSearch();
   const setSearchPage = (page) => {
     if (!searchResults || !searchPagination) return;
     const totalPages = Math.ceil(searchMatches.length / searchPageSize);
@@ -175,40 +281,35 @@
 
     const pageItems = searchMatches.slice((searchPage - 1) * searchPageSize, searchPage * searchPageSize);
     pageItems.forEach((article) => {
-      const link = document.createElement("a");
+      const link = document.createElement("div");
       link.className = "quick-search-result";
-      link.href = article.url;
+      link.dataset.searchUrl = article.url;
       const date = document.createElement("time");
       date.className = "quick-search-date";
       date.dateTime = article.date;
       date.textContent = article.date.slice(5).replace("-", ".");
       const copy = document.createElement("span");
       copy.className = "quick-search-copy";
+      const titleLink = document.createElement("a");
+      titleLink.className = "quick-search-title-link";
+      titleLink.href = `${article.url}#search=${encodeURIComponent(searchInput?.value.trim() || "")}&hit=0`;
+      link.addEventListener("click", (event) => {
+        if (event.target instanceof Element && event.target.closest("a")) return;
+        window.location.href = titleLink.href;
+      });
       const title = document.createElement("b");
       appendHighlightedText(title, article.title, searchTerms(searchInput?.value || ""));
+      titleLink.append(title);
       const summary = document.createElement("small");
       const content = article.content || article.summary || "";
-      const contentLower = content.toLocaleLowerCase("zh-CN");
-      const firstMatch = searchTerms(searchInput?.value || "")
-        .map((term) => contentLower.indexOf(term))
-        .filter((index) => index >= 0)
-        .sort((left, right) => left - right)[0];
-      if (firstMatch === undefined) {
-        appendHighlightedText(summary, article.summary || "", searchTerms(searchInput?.value || ""));
-      } else {
-        const start = Math.max(0, firstMatch - 45);
-        const excerpt = content.slice(start, start + 130);
-        if (start > 0) summary.append(document.createTextNode("…"));
-        appendHighlightedText(summary, excerpt, searchTerms(searchInput?.value || ""));
-        if (start + 130 < content.length) summary.append(document.createTextNode("…"));
-      }
-      copy.append(title, summary);
+      copy.append(titleLink, summary);
       const arrow = document.createElement("span");
       arrow.className = "quick-search-arrow";
       arrow.setAttribute("aria-hidden", "true");
       arrow.textContent = "→";
       link.append(date, copy, arrow);
       searchResults.append(link);
+      appendSearchExcerpts(summary, content, searchTerms(searchInput?.value || ""), article.summary || "");
     });
 
     searchPagination.replaceChildren();
