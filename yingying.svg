@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <defs>
+    <clipPath id="circle">
+      <circle cx="75" cy="75" r="75" />
+    </clipPath>
+  </defs>
+  <circle cx="75" cy="75" r="75" fill="#f3f2f7" />
+  <image href="/yingying.png" x="8" y="8" width="134" height="134" clip-path="url(#circle)" />
+</svg>
