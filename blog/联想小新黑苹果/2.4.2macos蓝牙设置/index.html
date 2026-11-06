@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="zh-CN" data-accent="violet">
+  <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="准备工作">
+  <meta name="author" content="言别离">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="2.4.2 macOS12蓝牙设置">
+  <meta property="og:description" content="准备工作">
+  <meta property="og:url" content="https://enji.dev/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/2.4.2macos%E8%93%9D%E7%89%99%E8%AE%BE%E7%BD%AE/">
+  <meta property="og:image" content="https://enji.dev/assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>2.4.2 macOS12蓝牙设置 · 果壳中的宇宙</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/chroma.css">
+  
+  <link rel="stylesheet" href="/css/twikoo.css">
+  <link rel="preload" href="/fonts/FiraCode-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/LXGWWenKaiGB-Regular3755.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://enji.dev/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/2.4.2macos%E8%93%9D%E7%89%99%E8%AE%BE%E7%BD%AE/">
+
+  </head>
+  <body data-view-counter-endpoint="https://guoke-view-counter.guoke.co" data-view-counter-site="guoke.co">
+    <div id="site-root">
+      <header class="site-header">
+  <div class="header-glass"></div>
+  <div class="header-inner content-wrapper">
+    <nav class="primary-nav" aria-label="主导航">
+      <a class="brand" href="/" aria-label="首页">
+        <span class="brand-mark "><i></i></span><span class="brand-name"><span>果壳</span><b>中的宇宙</b></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/projects/" >项目</a></li>
+        <li><a href="/blog/" aria-current="page">博客</a></li>
+        <li><a href="/today-i-learned/" >随学随记</a></li>
+        <li><a href="/stats/" >统计</a></li>
+        <li class="work-menu">
+          <details>
+            <summary>工作</summary>
+            <ul class="dropdown">
+              <li><a href="/work/skills-and-tools/">技能与工具</a></li>
+              <li><a href="/work/experience/">工作经历</a></li>
+              <li><a href="/work/studio/">工作空间</a></li>
+              <li><a href="/work/contact/">联系我</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="work-expanded">
+          <span class="work-expanded-label">工作 <span aria-hidden="true">›</span></span>
+          <ul>
+            <li><a href="/work/skills-and-tools/">技能与工具</a></li>
+            <li><span>·</span></li>
+            <li><a href="/work/experience/">工作经历</a></li>
+            <li><span>·</span></li>
+            <li><a href="/work/studio/">工作空间</a></li>
+            <li><span>·</span></li>
+            <li><a href="/work/contact/">联系我</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="social-link" href="https://twitter.com/yanbielio_O" target="_blank" rel="noreferrer" aria-label="Twitter">𝕏</a>
+      <a class="social-link" href="https://github.com/yanbieli" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg></a>
+      <span class="header-separator"></span>
+      <button class="quick-open icon-button" type="button" aria-label="打开快捷面板" title="快捷面板（Q）">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v4A1.5 1.5 0 0 0 2.5 10h6A1.5 1.5 0 0 0 10 8.5v-4A1.5 1.5 0 0 0 8.5 3h-6Zm11 2A1.5 1.5 0 0 0 12 6.5v7a1.5 1.5 0 0 0 1.5 1.5h4a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 17.5 5h-4Zm-10 7A1.5 1.5 0 0 0 2 13.5v2A1.5 1.5 0 0 0 3.5 17h6a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 9.5 12h-6Z"/></svg>
+        <span class="quick-open-label">快捷面板 <kbd>Q</kbd></span>
+      </button>
+      <button class="mobile-menu-button icon-button" type="button" aria-label="展开导航" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav content-wrapper" hidden>
+    <a href="/projects/">项目</a><a href="/blog/">博客</a>
+    <a href="/today-i-learned/">随学随记</a><a href="/stats/">统计</a><a href="/work/skills-and-tools/">工作</a>
+  </div>
+</header>
+
+      <main id="main-content">
+        
+  
+    <header class="page-header background-grid background-grid--fade-out">
+  
+  <div class="content-wrapper page-header-content">
+    
+    <h1>2.4.2 macOS12蓝牙设置</h1>
+    <p>准备工作</p>
+  </div>
+</header>
+
+    
+      <div class="content-wrapper article-meta article-meta--top">
+        <span class="article-meta__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h.01M12 15h.01M16 15h.01M8 18h.01M12 18h.01"/></svg>
+          <time datetime="2023-06-19">2023年6月19日</time>
+        </span>
+        <span class="article-meta__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h17M8 16v-4M13 16V8M18 16V4"/></svg>
+          <span data-view-count data-view-path="/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/2.4.2macos%E8%93%9D%E7%89%99%E8%AE%BE%E7%BD%AE/" title="文章浏览次数" aria-live="polite">— 看过</span>
+        </span>
+        <span class="article-meta__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h9l5 5v13H5z"/><path d="M14 3v6h5M8 13h8M8 17h8"/></svg>
+          115 字
+        </span>
+        <span class="article-meta__item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          阅读约 1 分钟
+        </span>
+      </div>
+    
+    <div class="content-wrapper article-layout has-toc blog-article">
+      
+        <aside class="toc-column"><nav class="toc-card" aria-label="本页目录"><div class="toc-heading"><h2 id="table-of-contents">本页目录</h2><a href="#top" class="to-top" tabindex="-1">回到顶部</a></div><nav id="TableOfContents">
+  <ol>
+    <li><a href="#intel-无线网卡">Intel 无线网卡</a></li>
+    <li><a href="#博通免驱网卡">博通免驱网卡</a></li>
+  </ol>
+</nav></nav></aside>
+      
+      <article class="prose" id="article-content">
+        <h2 id="intel-无线网卡" data-ss="intel-无线网卡" data-ss-mt="96" class="mdx-heading mdx-heading--h2">
+  <a class="mdx-heading__anchor" href="#intel-%e6%97%a0%e7%ba%bf%e7%bd%91%e5%8d%a1" aria-label="链接到Intel 无线网卡"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z" clip-rule="evenodd"/></svg></a>
+  <span>Intel 无线网卡</span>
+</h2>
+<p>使用 <code>BlueToolFixup.kext</code> 替代掉 <code>IntelBluetoothInjector.kext</code> 即可。</p>
+<p>BlueToolFixup.kext 可以从这里下载：https://github.com/acidanthera/BrcmPatchRAM/releases</p>
+<p>最终使用驱动如下：</p>
+<ul>
+<li>BlueToolFixup.kext</li>
+<li>IntelBluetoothFirmware.kext</li>
+</ul>
+<h2 id="博通免驱网卡" data-ss="博通免驱网卡" data-ss-mt="96" class="mdx-heading mdx-heading--h2">
+  <a class="mdx-heading__anchor" href="#%e5%8d%9a%e9%80%9a%e5%85%8d%e9%a9%b1%e7%bd%91%e5%8d%a1" aria-label="链接到博通免驱网卡"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z" clip-rule="evenodd"/></svg></a>
+  <span>博通免驱网卡</span>
+</h2>
+<p>使用 <code>BlueToolFixup.kext</code> 替代掉 <code>BrcmBluetoothInjector.kext</code> 即可。</p>
+<p>最终使用驱动如下：</p>
+<ul>
+<li>BlueToolFixup.kext</li>
+<li>BrcmFirmwareData.kext</li>
+<li>BrcmPatchRAM3.kext</li>
+</ul>
+        
+          <footer class="post-footer">
+  <div class="post-footer__metadata">
+    <span>分类：</span>
+    <a class="post-footer__category" href="/blog/">折腾</a>
+    <span>标签：</span>
+    <div class="post-footer__tags">
+      
+        <a href="/blog/">#黑苹果</a>
+      
+    </div>
+  </div>
+</footer>
+
+          <section class="reaction-bar" data-reaction-bar>
+  <div class="reaction-items">
+    <button class="reaction" type="button" data-reaction="clap" aria-label="鼓掌"><img src="/assets/emojis/clapping-hands.png" alt=""><span data-count="clap">—</span></button>
+    <button class="reaction" type="button" data-reaction="wow" aria-label="惊叹"><img src="/assets/emojis/astonished-face.png" alt=""><span data-count="wow">—</span></button>
+    <button class="reaction" type="button" data-reaction="think" aria-label="思考"><img src="/assets/emojis/face-with-monocle.png" alt=""><span data-count="think">—</span></button>
+  </div>
+  <div class="share-actions"><button type="button" class="reaction share-toggle" aria-label="分享文章">↗</button><button type="button" class="share-menu-item" data-copy-link>复制链接</button><a class="share-menu-item" data-share-x target="_blank" rel="noreferrer">分享到 X ↗</a></div>
+</section>
+
+          
+
+
+  <nav class="post-navigation" aria-label="文章导航">
+    
+      <a class="post-navigation__link post-navigation__link--previous" href="/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/2.4.1usb%E5%AE%9A%E5%88%B6/">
+        <span aria-hidden="true">←</span>
+        <span><small>上一篇</small><strong>2.4.1 USB定制</strong></span>
+      </a>
+    
+    
+      <a class="post-navigation__link post-navigation__link--next" href="/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/2.5drivers%E8%AF%B4%E6%98%8E/">
+        <span><small>下一篇</small><strong>2.5 Drives说明</strong></span>
+        <span aria-hidden="true">→</span>
+      </a>
+    
+  </nav>
+
+
+          
+            <section class="article-comments" data-twikoo-env-id="https://twikoo.guoke.co">
+              <div class="article-comments-heading"><span aria-hidden="true">◌</span><h2>评论</h2></div>
+              <div id="twikoo" class="twikoo" data-twikoo-comments data-page-key="/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/2.4.2macos%E8%93%9D%E7%89%99%E8%AE%BE%E7%BD%AE/"></div>
+              <p class="twikoo-status" data-twikoo-status role="status" aria-live="polite">评论加载中…</p>
+            </section>
+          
+        
+      </article>
+    </div>
+  
+
+      </main>
+      <footer class="site-footer background-grid background-grid--fade-in">
+  <div class="content-wrapper">
+    <div class="footer-main">
+      <section class="footer-about">
+        <div class="footer-label">关于我</div>
+        <p>我是 言别离，一名小小的<strong>编程爱好者</strong>。</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/yanbielio_O" aria-label="Twitter">𝕏</a>
+          <a href="https://github.com/yanbieli" aria-label="GitHub"><span class="footer-github-icon" aria-hidden="true"></span></a>
+        </div>
+      </section>
+      <div class="footer-groups">
+        <section><div class="footer-label">工作</div><a href="/work/contact/">联系我</a><a href="/work/experience/">工作经历</a><span class="footer-soon">服务 <small>即将上线</small></span><a href="/work/skills-and-tools/">技能与工具</a><a href="/work/studio/">工作空间</a></section>
+        <section><div class="footer-label">学习</div><a href="/docs/">文档</a><a href="/blog/">个人博客</a><a href="/today-i-learned/">随学随记 <small>新</small></a></section>
+        <section><div class="footer-label">关于本站</div><a href="https://www.figma.com/community/file/1176392613303840973" target="_blank" rel="noreferrer">设计概念 ↗</a><a href="https://github.com/enjidev/enji.dev" target="_blank" rel="noreferrer">源代码 ↗</a><a href="/credits/">致谢</a></section>
+      </div>
+    </div>
+    <div class="footer-bottom"><strong>© 2026，言别离 版权所有</strong><a href="https://github.com/yanbieli">在 GitHub 查看近期更新</a></div>
+  </div>
+</footer>
+
+    </div>
+    <section class="quick-panel" aria-label="快捷面板" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
+  <div class="quick-close-wrap">
+    <button class="quick-close" type="button" aria-label="关闭快捷面板" title="关闭快捷面板">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/></svg>
+    </button>
+  </div>
+  <div class="quick-panel-content" data-accent="violet">
+    <section class="quick-action-center" aria-labelledby="quick-action-title">
+      <h2 id="quick-action-title">操作中心</h2>
+      <div class="quick-action-row">
+        <button type="button" data-theme-toggle class="action-tile">
+          <span class="tile-icon theme-icon" aria-hidden="true">
+            <span class="theme-icon-rotator">
+              <span class="theme-icon-top">
+                <svg class="theme-icon-sun" viewBox="0 0 20 20"><path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2Zm0 13a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15Zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.657-1.596a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 1 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10Zm9.596 5.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"/></svg>
+              </span>
+              <span class="theme-icon-bottom">
+                <svg class="theme-icon-moon" viewBox="0 0 20 20"><path d="M6.45203 3.004C6.56477 3.09379 6.64926 3.21417 6.69537 3.35073C6.74148 3.48729 6.74726 3.63424 6.71203 3.774C6.37979 5.07796 6.43044 6.45006 6.8579 7.72598C7.28536 9.00191 8.07152 10.1276 9.12225 10.9682C10.173 11.8089 11.4437 12.3289 12.7824 12.4659C14.121 12.603 15.4708 12.3513 16.67 11.741C16.7985 11.6757 16.943 11.6487 17.0864 11.6634C17.2297 11.678 17.3658 11.7337 17.4784 11.8237C17.591 11.9136 17.6752 12.0342 17.7211 12.1708C17.7669 12.3074 17.7725 12.4543 17.737 12.594C17.3862 13.9713 16.6957 15.2386 15.7285 16.2801C14.7614 17.3216 13.5486 18.1039 12.201 18.5555C10.8534 19.0071 9.41402 19.1136 8.01462 18.8653C6.61523 18.6169 5.30045 18.0216 4.19056 17.1338C3.08068 16.246 2.21112 15.0941 1.66144 13.7835C1.11176 12.4728 .899512 11.0452 1.0441 9.63132C1.18869 8.21742 1.68551 6.86236 2.48911 5.69008C3.2927 4.51781 4.37742 3.56575 5.64403 2.921C5.77246 2.85578 5.91695 2.82893 6.06024 2.84365C6.20352 2.85837 6.33954 2.91403 6.45203 3.004Z"/><path d="M14.979 1.801C14.9331 1.57494 14.8105 1.37171 14.6319 1.22573C14.4533 1.07975 14.2297 1 13.999 1C13.7684 1 13.5448 1.07975 13.3662 1.22573C13.1876 1.37171 13.0649 1.57494 13.019 1.801L12.779 2.993C12.7404 3.18663 12.6454 3.3645 12.5059 3.5042C12.3664 3.64389 12.1886 3.73916 11.995 3.778L10.803 4.016C10.5759 4.06092 10.3714 4.18328 10.2244 4.36218C10.0774 4.54109 9.99704 4.76546 9.99704 4.997C9.99704 5.22855 10.0774 5.45292 10.2244 5.63182C10.3714 5.81073 10.5759 5.93308 10.803 5.978L11.995 6.216C12.1888 6.25466 12.3668 6.34986 12.5065 6.48957C12.6462 6.62928 12.7414 6.80724 12.78 7.001L13.018 8.193C13.063 8.42015 13.1853 8.62467 13.3642 8.77166C13.5431 8.91864 13.7675 8.99899 13.999 8.99899C14.2306 8.99899 14.4549 8.91864 14.6339 8.77166C14.8128 8.62467 14.9351 8.42073 14.98 8.193L15.218 7.001C15.2567 6.80724 15.3519 6.62928 15.4916 6.48957C15.6313 6.34986 15.8093 6.25415 16.003 6.216L17.195 5.978C17.4222 5.93308 17.6267 5.81073 17.7737 5.63182C17.9207 5.45292 18.001 5.22855 18.001 4.997C18.001 4.76546 17.9207 4.54109 17.7737 4.36218C17.6267 4.18328 17.4222 4.06092 17.195 4.016L16.003 3.778C15.8093 3.73934 15.6313 3.64415 15.4916 3.50444C15.3519 3.36473 15.2567 3.18676 15.218 2.993L14.98 1.801H14.979Z"/></svg>
+              </span>
+            </span>
+          </span>
+          <span data-theme-label>深色模式：关闭</span>
+        </button>
+        <button type="button" data-focus-toggle class="action-tile">
+          <span class="tile-icon focus-icon" aria-hidden="true">
+            <svg class="focus-icon-eye" viewBox="0 0 20 20"><path d="M10 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 0 1 0-1.186A10.004 10.004 0 0 1 10 3a10.004 10.004 0 0 1 9.336 6.41c.146.382.147.805 0 1.186A10.004 10.004 0 0 1 10 17a10.004 10.004 0 0 1-9.336-6.41ZM14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" clip-rule="evenodd"/></svg>
+            <svg class="focus-icon-hidden" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.28 2.22a.75.75 0 0 0-1.06 1.06l14.5 14.5a.75.75 0 1 0 1.06-1.06l-1.745-1.745a10.029 10.029 0 0 0 3.3-4.38 1.651 1.651 0 0 0 0-1.185A10.004 10.004 0 0 0 10 3a9.956 9.956 0 0 0-4.744 1.194L3.28 2.22ZM7.752 6.69l1.092 1.092a2.5 2.5 0 0 1 3.374 3.373l1.091 1.092A4 4 0 0 0 7.752 6.69Z" clip-rule="evenodd"/><path d="m10.748 13.93 2.523 2.523a9.987 9.987 0 0 1-3.27.547c-4.258 0-7.894-2.66-9.337-6.41a1.651 1.651 0 0 1 0-1.186A10.007 10.007 0 0 1 2.839 6.02l3.23 3.232a4 4 0 0 0 4.679 4.678Z"/></svg>
+          </span>
+          <span data-focus-label>专注模式：关闭</span>
+        </button>
+      </div>
+    </section>
+    <section class="quick-activity quick-recent" aria-labelledby="quick-recent-title">
+      <h2 id="quick-recent-title">最近文章</h2>
+      <div class="quick-recent-list">
+        
+          <a class="quick-recent-link" href="/blog/archlinux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/">
+            <time datetime="2026-11-02">2026.11.02</time>
+            <span>Archlinux单硬盘双系统安装方法</span>
+          </a>
+        
+          <a class="quick-recent-link" href="/blog/%E6%A1%91%E5%A4%9A%E6%B6%85%E5%93%88%E6%9D%A5%E8%87%B3%E5%86%AC%E9%9C%80%E8%A6%81%E6%89%A7%E8%A1%8C%E5%AE%98%E7%85%A7%E9%A1%BE/">
+            <time datetime="2026-10-20">2026.10.20</time>
+            <span>桑多涅：哈？来至冬需要执行官照顾？</span>
+          </a>
+        
+          <a class="quick-recent-link" href="/blog/hello%E7%AE%97%E6%B3%95/">
+            <time datetime="2026-10-17">2026.10.17</time>
+            <span>Hello算法</span>
+          </a>
+        
+          <a class="quick-recent-link" href="/blog/windows%E4%B8%8Arime%E8%BE%93%E5%85%A5%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">
+            <time datetime="2026-08-07">2026.08.07</time>
+            <span>Windows上Rime输入法的一些配置</span>
+          </a>
+        
+          <a class="quick-recent-link" href="/blog/%E7%9C%8B%E6%87%82%E8%8A%AF%E7%89%87%E5%8E%9F%E6%9D%A5%E8%BF%99%E4%B9%88%E7%AE%80%E5%8D%95/">
+            <time datetime="2026-07-20">2026.07.20</time>
+            <span>看懂芯片原来这么简单</span>
+          </a>
+        
+      </div>
+    </section>
+  </div>
+  <section class="quick-search" aria-labelledby="quick-search-title">
+    <h2 id="quick-search-title">搜索文章</h2>
+    <label class="quick-search-box">
+      <span aria-hidden="true">⌕</span>
+      <input type="search" data-quick-search data-search-index-url="/search-index.json" placeholder="搜索文章标题、标签或全文…" aria-label="搜索文章全文" autocomplete="off" spellcheck="false">
+      <kbd>↵</kbd>
+    </label>
+    <p class="quick-search-status" data-quick-search-status role="status" aria-live="polite">输入关键词搜索文章全文</p>
+    <div class="quick-search-results" data-quick-search-results aria-live="polite" hidden></div>
+    <nav class="quick-search-pagination" data-quick-search-pagination aria-label="搜索结果分页" hidden></nav>
+  </section>
+  <aside class="shortcut-hint">
+    <h2><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z"/><path d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-.5zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75v-.5zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75v-.5zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75v-.5zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75v-.5zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25v-.5z"/></svg>快捷键提示</h2>
+    <p>使用键盘快捷键，轻松浏览网站。</p>
+    <div class="shortcut-list">
+      <div><span>打开快捷面板</span><kbd>Q</kbd></div>
+      <div><span>关闭快捷面板</span><span><kbd>Q</kbd><i>或</i><kbd>Esc</kbd></span></div>
+      <div><span>切换深色模式</span><kbd>D</kbd></div>
+      <div><span>切换专注模式</span><kbd>F</kbd></div>
+    </div>
+  </aside>
+</section>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="/js/article-stats.js" defer></script>
+    <script src="/js/twikoo.js" defer></script>
+    
+    <script src="/js/site.js" defer></script>
+  </body>
+</html>

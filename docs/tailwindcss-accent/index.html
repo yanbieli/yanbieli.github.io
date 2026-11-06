@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-CN" data-accent="violet">
+  <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="为 Tailwind CSS 项目提供动态、灵活的强调色。">
+  <meta name="author" content="言别离">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="tailwindcss-accent">
+  <meta property="og:description" content="为 Tailwind CSS 项目提供动态、灵活的强调色。">
+  <meta property="og:url" content="https://enji.dev/docs/tailwindcss-accent/">
+  <meta property="og:image" content="https://enji.dev/assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>tailwindcss-accent · 果壳中的宇宙</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/chroma.css">
+  
+  
+  <link rel="preload" href="/fonts/FiraCode-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/LXGWWenKaiGB-Regular3755.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://enji.dev/docs/tailwindcss-accent/">
+
+  </head>
+  <body data-view-counter-endpoint="https://guoke-view-counter.guoke.co" data-view-counter-site="guoke.co">
+    <div id="site-root">
+      <header class="site-header">
+  <div class="header-glass"></div>
+  <div class="header-inner content-wrapper">
+    <nav class="primary-nav" aria-label="主导航">
+      <a class="brand" href="/" aria-label="首页">
+        <span class="brand-mark "><i></i></span><span class="brand-name"><span>果壳</span><b>中的宇宙</b></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/projects/" >项目</a></li>
+        <li><a href="/blog/" >博客</a></li>
+        <li><a href="/today-i-learned/" >随学随记</a></li>
+        <li><a href="/stats/" >统计</a></li>
+        <li class="work-menu">
+          <details>
+            <summary>工作</summary>
+            <ul class="dropdown">
+              <li><a href="/work/skills-and-tools/">技能与工具</a></li>
+              <li><a href="/work/experience/">工作经历</a></li>
+              <li><a href="/work/studio/">工作空间</a></li>
+              <li><a href="/work/contact/">联系我</a></li>
+            </ul>
+          </details>
+        </li>
+        <li class="work-expanded">
+          <span class="work-expanded-label">工作 <span aria-hidden="true">›</span></span>
+          <ul>
+            <li><a href="/work/skills-and-tools/">技能与工具</a></li>
+            <li><span>·</span></li>
+            <li><a href="/work/experience/">工作经历</a></li>
+            <li><span>·</span></li>
+            <li><a href="/work/studio/">工作空间</a></li>
+            <li><span>·</span></li>
+            <li><a href="/work/contact/">联系我</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="social-link" href="https://twitter.com/yanbielio_O" target="_blank" rel="noreferrer" aria-label="Twitter">𝕏</a>
+      <a class="social-link" href="https://github.com/yanbieli" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg></a>
+      <span class="header-separator"></span>
+      <button class="quick-open icon-button" type="button" aria-label="打开快捷面板" title="快捷面板（Q）">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v4A1.5 1.5 0 0 0 2.5 10h6A1.5 1.5 0 0 0 10 8.5v-4A1.5 1.5 0 0 0 8.5 3h-6Zm11 2A1.5 1.5 0 0 0 12 6.5v7a1.5 1.5 0 0 0 1.5 1.5h4a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 17.5 5h-4Zm-10 7A1.5 1.5 0 0 0 2 13.5v2A1.5 1.5 0 0 0 3.5 17h6a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 9.5 12h-6Z"/></svg>
+        <span class="quick-open-label">快捷面板 <kbd>Q</kbd></span>
+      </button>
+      <button class="mobile-menu-button icon-button" type="button" aria-label="展开导航" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav content-wrapper" hidden>
+    <a href="/projects/">项目</a><a href="/blog/">博客</a>
+    <a href="/today-i-learned/">随学随记</a><a href="/stats/">统计</a><a href="/work/skills-and-tools/">工作</a>
+  </div>
+</header>
+
+      <main id="main-content">
+        
+  
+    <header class="page-header background-grid background-grid--fade-out">
+  
+  <div class="content-wrapper page-header-content">
+    <span class="page-caption">插件</span>
+    <h1>tailwindcss-accent</h1>
+    <p>为 Tailwind CSS 项目提供动态、灵活的强调色。</p>
+  </div>
+</header>
+
+    
+    <div class="content-wrapper article-layout has-toc ">
+      
+        <aside class="toc-column"><nav class="toc-card" aria-label="本页目录"><div class="toc-heading"><h2 id="table-of-contents">本页目录</h2><a href="#top" class="to-top" tabindex="-1">回到顶部</a></div><nav id="TableOfContents">
+  <ol>
+    <li><a href="#安装">安装</a>
+      <ol>
+        <li><a href="#插件选项">插件选项</a></li>
+        <li><a href="#可用颜色">可用颜色</a></li>
+      </ol>
+    </li>
+    <li><a href="#基本用法">基本用法</a></li>
+    <li><a href="#示例">示例</a></li>
+    <li><a href="#许可证">许可证</a></li>
+  </ol>
+</nav></nav></aside>
+      
+      <article class="prose" id="article-content">
+        <p>一个 Tailwind CSS 插件，通过 CSS 自定义属性和 Tailwind 默认色板提供 <strong>accent</strong> 强调色工具类。</p>
+<blockquote>
+<p>此插件已在 Tailwind CSS v2 和 v3 中测试。</p>
+</blockquote>
+<h2 id="安装" data-ss="安装" data-ss-mt="96" class="mdx-heading mdx-heading--h2">
+  <a class="mdx-heading__anchor" href="#%e5%ae%89%e8%a3%85" aria-label="链接到安装"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z" clip-rule="evenodd"/></svg></a>
+  <span>安装</span>
+</h2>
+<p>通过 npm 安装：</p>
+<div class="mdx-code">
+  <button type="button" class="mdx-code__copy-button" data-copy-code aria-label="复制代码" title="复制代码">
+    <span class="mdx-code__copy-button-message">已复制</span>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 2.75A1.75 1.75 0 0 1 8.75 1h7.5A1.75 1.75 0 0 1 18 2.75v9.5A1.75 1.75 0 0 1 16.25 14h-7.5A1.75 1.75 0 0 1 7 12.25v-9.5ZM8.75 2.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25h-7.5ZM3.75 5H5v1.5H3.75a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V16h1.5v1.25A1.75 1.75 0 0 1 12.25 19h-8.5A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Z"/></svg>
+  </button>
+  <div class="mdx-code__content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install -D tailwindcss-accent</span></span></code></pre></div></div>
+  <div class="mdx-code__footer">
+    <span class="mdx-code__footer-item">BASH</span>
+    <span class="mdx-code__footer-item">行数：1</span>
+    <span class="mdx-code__footer-item">UTF-8</span>
+  </div>
+</div>
+<p>也可以使用 yarn 或 pnpm：</p>
+<div class="mdx-code">
+  <button type="button" class="mdx-code__copy-button" data-copy-code aria-label="复制代码" title="复制代码">
+    <span class="mdx-code__copy-button-message">已复制</span>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 2.75A1.75 1.75 0 0 1 8.75 1h7.5A1.75 1.75 0 0 1 18 2.75v9.5A1.75 1.75 0 0 1 16.25 14h-7.5A1.75 1.75 0 0 1 7 12.25v-9.5ZM8.75 2.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25h-7.5ZM3.75 5H5v1.5H3.75a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V16h1.5v1.25A1.75 1.75 0 0 1 12.25 19h-8.5A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Z"/></svg>
+  </button>
+  <div class="mdx-code__content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">yarn add -D tailwindcss-accent
+</span></span><span class="line"><span class="cl">pnpm add -D tailwindcss-accent</span></span></code></pre></div></div>
+  <div class="mdx-code__footer">
+    <span class="mdx-code__footer-item">BASH</span>
+    <span class="mdx-code__footer-item">行数：2</span>
+    <span class="mdx-code__footer-item">UTF-8</span>
+  </div>
+</div>
+<p>然后在 <code>tailwind.config.js</code> 中添加插件：</p>
+<div class="mdx-code">
+  <button type="button" class="mdx-code__copy-button" data-copy-code aria-label="复制代码" title="复制代码">
+    <span class="mdx-code__copy-button-message">已复制</span>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 2.75A1.75 1.75 0 0 1 8.75 1h7.5A1.75 1.75 0 0 1 18 2.75v9.5A1.75 1.75 0 0 1 16.25 14h-7.5A1.75 1.75 0 0 1 7 12.25v-9.5ZM8.75 2.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25h-7.5ZM3.75 5H5v1.5H3.75a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V16h1.5v1.25A1.75 1.75 0 0 1 12.25 19h-8.5A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Z"/></svg>
+  </button>
+  <div class="mdx-code__content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;tailwindcss-accent&#39;</span><span class="p">)({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">colors</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;violet&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">root</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">cssVarsPrefix</span><span class="o">:</span> <span class="s1">&#39;tw-plugin&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
+  <div class="mdx-code__footer">
+    <span class="mdx-code__footer-item">JS</span>
+    <span class="mdx-code__footer-item">行数：9</span>
+    <span class="mdx-code__footer-item">UTF-8</span>
+  </div>
+</div>
+<h3 id="插件选项" data-ss="插件选项" data-ss-mt="96" class="mdx-heading mdx-heading--h3">
+  <a class="mdx-heading__anchor" href="#%e6%8f%92%e4%bb%b6%e9%80%89%e9%a1%b9" aria-label="链接到插件选项"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z" clip-rule="evenodd"/></svg></a>
+  <span>插件选项</span>
+</h3>
+<table>
+	<thead>
+			<tr>
+					<th>选项</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>colors</code>（必填）</td>
+					<td>要包含的颜色。</td>
+			</tr>
+			<tr>
+					<td><code>root</code></td>
+					<td>将色板中的一种颜色设为根强调色。</td>
+			</tr>
+			<tr>
+					<td><code>cssVarsPrefix</code></td>
+					<td>CSS 变量前缀，默认是 <code>tw-ta</code>。</td>
+			</tr>
+	</tbody>
+</table>
+<p><code>cssVarsPrefix</code> 可以帮助避免样式中的变量名称冲突。</p>
+<h3 id="可用颜色" data-ss="可用颜色" data-ss-mt="96" class="mdx-heading mdx-heading--h3">
+  <a class="mdx-heading__anchor" href="#%e5%8f%af%e7%94%a8%e9%a2%9c%e8%89%b2" aria-label="链接到可用颜色"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z" clip-rule="evenodd"/></svg></a>
+  <span>可用颜色</span>
+</h3>
+<p>请参考 <a href="https://v2.tailwindcss.com/docs/customizing-colors#color-palette-reference">Tailwind CSS v2 色板</a> 与 <a href="https://tailwindcss.com/docs/customizing-colors#default-color-palette">v3 色板</a>。</p>
+<h2 id="基本用法" data-ss="基本用法" data-ss-mt="96" class="mdx-heading mdx-heading--h2">
+  <a class="mdx-heading__anchor" href="#%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95" aria-label="链接到基本用法"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z" clip-rule="evenodd"/></svg></a>
+  <span>基本用法</span>
+</h2>
+<p>在根元素上添加 <code>data-accent</code> 属性，或设置插件的 <code>root</code> 选项：</p>
+<div class="mdx-code">
+  <button type="button" class="mdx-code__copy-button" data-copy-code aria-label="复制代码" title="复制代码">
+    <span class="mdx-code__copy-button-message">已复制</span>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 2.75A1.75 1.75 0 0 1 8.75 1h7.5A1.75 1.75 0 0 1 18 2.75v9.5A1.75 1.75 0 0 1 16.25 14h-7.5A1.75 1.75 0 0 1 7 12.25v-9.5ZM8.75 2.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25h-7.5ZM3.75 5H5v1.5H3.75a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V16h1.5v1.25A1.75 1.75 0 0 1 12.25 19h-8.5A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Z"/></svg>
+  </button>
+  <div class="mdx-code__content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">data-accent</span><span class="o">=</span><span class="s">&#34;blue&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-accent-600&#34;</span><span class="p">&gt;</span>文字将使用蓝色强调色。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></div></div>
+  <div class="mdx-code__footer">
+    <span class="mdx-code__footer-item">HTML</span>
+    <span class="mdx-code__footer-item">行数：3</span>
+    <span class="mdx-code__footer-item">UTF-8</span>
+  </div>
+</div>
+<p>强调色会遵循最近父级的 <code>data-accent</code> 属性，元素本身也可以覆盖它：</p>
+<div class="mdx-code">
+  <button type="button" class="mdx-code__copy-button" data-copy-code aria-label="复制代码" title="复制代码">
+    <span class="mdx-code__copy-button-message">已复制</span>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 2.75A1.75 1.75 0 0 1 8.75 1h7.5A1.75 1.75 0 0 1 18 2.75v9.5A1.75 1.75 0 0 1 16.25 14h-7.5A1.75 1.75 0 0 1 7 12.25v-9.5ZM8.75 2.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25h-7.5ZM3.75 5H5v1.5H3.75a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V16h1.5v1.25A1.75 1.75 0 0 1 12.25 19h-8.5A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Z"/></svg>
+  </button>
+  <div class="mdx-code__content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-accent</span><span class="o">=</span><span class="s">&#34;violet&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-accent-600&#34;</span><span class="p">&gt;</span>紫色文字<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-accent</span><span class="o">=</span><span class="s">&#34;blue&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-accent-600&#34;</span><span class="p">&gt;</span>蓝色文字<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div></div>
+  <div class="mdx-code__footer">
+    <span class="mdx-code__footer-item">HTML</span>
+    <span class="mdx-code__footer-item">行数：4</span>
+    <span class="mdx-code__footer-item">UTF-8</span>
+  </div>
+</div>
+<p><a href="https://play.tailwindcss.com/D1HDP9fJhF">在 Tailwind Play 中试用</a></p>
+<h2 id="示例" data-ss="示例" data-ss-mt="96" class="mdx-heading mdx-heading--h2">
+  <a class="mdx-heading__anchor" href="#%e7%a4%ba%e4%be%8b" aria-label="链接到示例"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z" clip-rule="evenodd"/></svg></a>
+  <span>示例</span>
+</h2>
+<p>本网站也使用了此插件。默认强调色为 violet，<code>/work/</code> 下的页面则使用 blue。可以在目录、标题、链接等处看到差异。</p>
+<p>点击下方按钮切换本页强调色：</p>
+<p><button type="button" class="button button-outline" data-accent-toggle>切换强调色</button></p>
+<div class="mdx-code">
+  <button type="button" class="mdx-code__copy-button" data-copy-code aria-label="复制代码" title="复制代码">
+    <span class="mdx-code__copy-button-message">已复制</span>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 2.75A1.75 1.75 0 0 1 8.75 1h7.5A1.75 1.75 0 0 1 18 2.75v9.5A1.75 1.75 0 0 1 16.25 14h-7.5A1.75 1.75 0 0 1 7 12.25v-9.5ZM8.75 2.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25h-7.5ZM3.75 5H5v1.5H3.75a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V16h1.5v1.25A1.75 1.75 0 0 1 12.25 19h-8.5A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Z"/></svg>
+  </button>
+  <div class="mdx-code__content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-accent&#39;</span><span class="p">,</span> <span class="nx">newAccent</span><span class="p">);</span></span></span></code></pre></div></div>
+  <div class="mdx-code__footer">
+    <span class="mdx-code__footer-item">JS</span>
+    <span class="mdx-code__footer-item">行数：1</span>
+    <span class="mdx-code__footer-item">UTF-8</span>
+  </div>
+</div>
+<p>只需改变根元素的 <code>data-accent</code> 属性，使用 <code>accent-*</code> 的组件便会自动切换颜色。</p>
+<h2 id="许可证" data-ss="许可证" data-ss-mt="96" class="mdx-heading mdx-heading--h2">
+  <a class="mdx-heading__anchor" href="#%e8%ae%b8%e5%8f%af%e8%af%81" aria-label="链接到许可证"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z" clip-rule="evenodd"/></svg></a>
+  <span>许可证</span>
+</h2>
+<p><code>tailwindcss-accent</code> 使用 MIT 许可证。</p>
+
+        
+      </article>
+    </div>
+  
+
+      </main>
+      <footer class="site-footer background-grid background-grid--fade-in">
+  <div class="content-wrapper">
+    <div class="footer-main">
+      <section class="footer-about">
+        <div class="footer-label">关于我</div>
+        <p>我是 言别离，一名小小的<strong>编程爱好者</strong>。</p>
+        <div class="footer-social">
+          <a href="https://twitter.com/yanbielio_O" aria-label="Twitter">𝕏</a>
+          <a href="https://github.com/yanbieli" aria-label="GitHub"><span class="footer-github-icon" aria-hidden="true"></span></a>
+        </div>
+      </section>
+      <div class="footer-groups">
+        <section><div class="footer-label">工作</div><a href="/work/contact/">联系我</a><a href="/work/experience/">工作经历</a><span class="footer-soon">服务 <small>即将上线</small></span><a href="/work/skills-and-tools/">技能与工具</a><a href="/work/studio/">工作空间</a></section>
+        <section><div class="footer-label">学习</div><a href="/docs/">文档</a><a href="/blog/">个人博客</a><a href="/today-i-learned/">随学随记 <small>新</small></a></section>
+        <section><div class="footer-label">关于本站</div><a href="https://www.figma.com/community/file/1176392613303840973" target="_blank" rel="noreferrer">设计概念 ↗</a><a href="https://github.com/enjidev/enji.dev" target="_blank" rel="noreferrer">源代码 ↗</a><a href="/credits/">致谢</a></section>
+      </div>
+    </div>
+    <div class="footer-bottom"><strong>© 2026，言别离 版权所有</strong><a href="https://github.com/yanbieli">在 GitHub 查看近期更新</a></div>
+  </div>
+</footer>
+
+    </div>
+    <section class="quick-panel" aria-label="快捷面板" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1">
+  <div class="quick-close-wrap">
+    <button class="quick-close" type="button" aria-label="关闭快捷面板" title="关闭快捷面板">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/></svg>
+    </button>
+  </div>
+  <div class="quick-panel-content" data-accent="violet">
+    <section class="quick-action-center" aria-labelledby="quick-action-title">
+      <h2 id="quick-action-title">操作中心</h2>
+      <div class="quick-action-row">
+        <button type="button" data-theme-toggle class="action-tile">
+          <span class="tile-icon theme-icon" aria-hidden="true">
+            <span class="theme-icon-rotator">
+              <span class="theme-icon-top">
+                <svg class="theme-icon-sun" viewBox="0 0 20 20"><path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2Zm0 13a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15Zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.657-1.596a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 1 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10Zm9.596 5.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"/></svg>
+              </span>
+              <span class="theme-icon-bottom">
+                <svg class="theme-icon-moon" viewBox="0 0 20 20"><path d="M6.45203 3.004C6.56477 3.09379 6.64926 3.21417 6.69537 3.35073C6.74148 3.48729 6.74726 3.63424 6.71203 3.774C6.37979 5.07796 6.43044 6.45006 6.8579 7.72598C7.28536 9.00191 8.07152 10.1276 9.12225 10.9682C10.173 11.8089 11.4437 12.3289 12.7824 12.4659C14.121 12.603 15.4708 12.3513 16.67 11.741C16.7985 11.6757 16.943 11.6487 17.0864 11.6634C17.2297 11.678 17.3658 11.7337 17.4784 11.8237C17.591 11.9136 17.6752 12.0342 17.7211 12.1708C17.7669 12.3074 17.7725 12.4543 17.737 12.594C17.3862 13.9713 16.6957 15.2386 15.7285 16.2801C14.7614 17.3216 13.5486 18.1039 12.201 18.5555C10.8534 19.0071 9.41402 19.1136 8.01462 18.8653C6.61523 18.6169 5.30045 18.0216 4.19056 17.1338C3.08068 16.246 2.21112 15.0941 1.66144 13.7835C1.11176 12.4728 .899512 11.0452 1.0441 9.63132C1.18869 8.21742 1.68551 6.86236 2.48911 5.69008C3.2927 4.51781 4.37742 3.56575 5.64403 2.921C5.77246 2.85578 5.91695 2.82893 6.06024 2.84365C6.20352 2.85837 6.33954 2.91403 6.45203 3.004Z"/><path d="M14.979 1.801C14.9331 1.57494 14.8105 1.37171 14.6319 1.22573C14.4533 1.07975 14.2297 1 13.999 1C13.7684 1 13.5448 1.07975 13.3662 1.22573C13.1876 1.37171 13.0649 1.57494 13.019 1.801L12.779 2.993C12.7404 3.18663 12.6454 3.3645 12.5059 3.5042C12.3664 3.64389 12.1886 3.73916 11.995 3.778L10.803 4.016C10.5759 4.06092 10.3714 4.18328 10.2244 4.36218C10.0774 4.54109 9.99704 4.76546 9.99704 4.997C9.99704 5.22855 10.0774 5.45292 10.2244 5.63182C10.3714 5.81073 10.5759 5.93308 10.803 5.978L11.995 6.216C12.1888 6.25466 12.3668 6.34986 12.5065 6.48957C12.6462 6.62928 12.7414 6.80724 12.78 7.001L13.018 8.193C13.063 8.42015 13.1853 8.62467 13.3642 8.77166C13.5431 8.91864 13.7675 8.99899 13.999 8.99899C14.2306 8.99899 14.4549 8.91864 14.6339 8.77166C14.8128 8.62467 14.9351 8.42073 14.98 8.193L15.218 7.001C15.2567 6.80724 15.3519 6.62928 15.4916 6.48957C15.6313 6.34986 15.8093 6.25415 16.003 6.216L17.195 5.978C17.4222 5.93308 17.6267 5.81073 17.7737 5.63182C17.9207 5.45292 18.001 5.22855 18.001 4.997C18.001 4.76546 17.9207 4.54109 17.7737 4.36218C17.6267 4.18328 17.4222 4.06092 17.195 4.016L16.003 3.778C15.8093 3.73934 15.6313 3.64415 15.4916 3.50444C15.3519 3.36473 15.2567 3.18676 15.218 2.993L14.98 1.801H14.979Z"/></svg>
+              </span>
+            </span>
+          </span>
+          <span data-theme-label>深色模式：关闭</span>
+        </button>
+        <button type="button" data-focus-toggle class="action-tile">
+          <span class="tile-icon focus-icon" aria-hidden="true">
+            <svg class="focus-icon-eye" viewBox="0 0 20 20"><path d="M10 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 0 1 0-1.186A10.004 10.004 0 0 1 10 3a10.004 10.004 0 0 1 9.336 6.41c.146.382.147.805 0 1.186A10.004 10.004 0 0 1 10 17a10.004 10.004 0 0 1-9.336-6.41ZM14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" clip-rule="evenodd"/></svg>
+            <svg class="focus-icon-hidden" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3.28 2.22a.75.75 0 0 0-1.06 1.06l14.5 14.5a.75.75 0 1 0 1.06-1.06l-1.745-1.745a10.029 10.029 0 0 0 3.3-4.38 1.651 1.651 0 0 0 0-1.185A10.004 10.004 0 0 0 10 3a9.956 9.956 0 0 0-4.744 1.194L3.28 2.22ZM7.752 6.69l1.092 1.092a2.5 2.5 0 0 1 3.374 3.373l1.091 1.092A4 4 0 0 0 7.752 6.69Z" clip-rule="evenodd"/><path d="m10.748 13.93 2.523 2.523a9.987 9.987 0 0 1-3.27.547c-4.258 0-7.894-2.66-9.337-6.41a1.651 1.651 0 0 1 0-1.186A10.007 10.007 0 0 1 2.839 6.02l3.23 3.232a4 4 0 0 0 4.679 4.678Z"/></svg>
+          </span>
+          <span data-focus-label>专注模式：关闭</span>
+        </button>
+      </div>
+    </section>
+    <section class="quick-activity quick-recent" aria-labelledby="quick-recent-title">
+      <h2 id="quick-recent-title">最近文章</h2>
+      <div class="quick-recent-list">
+        
+          <a class="quick-recent-link" href="/blog/archlinux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/">
+            <time datetime="2026-11-02">2026.11.02</time>
+            <span>Archlinux单硬盘双系统安装方法</span>
+          </a>
+        
+          <a class="quick-recent-link" href="/blog/%E6%A1%91%E5%A4%9A%E6%B6%85%E5%93%88%E6%9D%A5%E8%87%B3%E5%86%AC%E9%9C%80%E8%A6%81%E6%89%A7%E8%A1%8C%E5%AE%98%E7%85%A7%E9%A1%BE/">
+            <time datetime="2026-10-20">2026.10.20</time>
+            <span>桑多涅：哈？来至冬需要执行官照顾？</span>
+          </a>
+        
+          <a class="quick-recent-link" href="/blog/hello%E7%AE%97%E6%B3%95/">
+            <time datetime="2026-10-17">2026.10.17</time>
+            <span>Hello算法</span>
+          </a>
+        
+          <a class="quick-recent-link" href="/blog/windows%E4%B8%8Arime%E8%BE%93%E5%85%A5%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/">
+            <time datetime="2026-08-07">2026.08.07</time>
+            <span>Windows上Rime输入法的一些配置</span>
+          </a>
+        
+          <a class="quick-recent-link" href="/blog/%E7%9C%8B%E6%87%82%E8%8A%AF%E7%89%87%E5%8E%9F%E6%9D%A5%E8%BF%99%E4%B9%88%E7%AE%80%E5%8D%95/">
+            <time datetime="2026-07-20">2026.07.20</time>
+            <span>看懂芯片原来这么简单</span>
+          </a>
+        
+      </div>
+    </section>
+  </div>
+  <section class="quick-search" aria-labelledby="quick-search-title">
+    <h2 id="quick-search-title">搜索文章</h2>
+    <label class="quick-search-box">
+      <span aria-hidden="true">⌕</span>
+      <input type="search" data-quick-search data-search-index-url="/search-index.json" placeholder="搜索文章标题、标签或全文…" aria-label="搜索文章全文" autocomplete="off" spellcheck="false">
+      <kbd>↵</kbd>
+    </label>
+    <p class="quick-search-status" data-quick-search-status role="status" aria-live="polite">输入关键词搜索文章全文</p>
+    <div class="quick-search-results" data-quick-search-results aria-live="polite" hidden></div>
+    <nav class="quick-search-pagination" data-quick-search-pagination aria-label="搜索结果分页" hidden></nav>
+  </section>
+  <aside class="shortcut-hint">
+    <h2><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z"/><path d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-.5zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75v-.5zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75v-.5zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75v-.5zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75v-.5zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25v-.5z"/></svg>快捷键提示</h2>
+    <p>使用键盘快捷键，轻松浏览网站。</p>
+    <div class="shortcut-list">
+      <div><span>打开快捷面板</span><kbd>Q</kbd></div>
+      <div><span>关闭快捷面板</span><span><kbd>Q</kbd><i>或</i><kbd>Esc</kbd></span></div>
+      <div><span>切换深色模式</span><kbd>D</kbd></div>
+      <div><span>切换专注模式</span><kbd>F</kbd></div>
+    </div>
+  </aside>
+</section>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    
+    
+    
+    <script src="/js/site.js" defer></script>
+  </body>
+</html>
