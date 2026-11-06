@@ -1,8 +1,10 @@
 (() => {
   const views = [...document.querySelectorAll("[data-view-count]")];
+  const pageViews = views.filter((element) => element.dataset.viewCount === "increment");
+  const listingViews = views.filter((element) => element.dataset.viewCount === "lookup");
   const reactionBar = document.querySelector("[data-reaction-bar]");
   const reactionButtons = [...(reactionBar?.querySelectorAll("[data-reaction]") || [])];
-  if (!views.length && !reactionButtons.length) return;
+  if (!pageViews.length && !listingViews.length && !reactionButtons.length) return;
 
   const endpointValue = document.body.dataset.viewCounterEndpoint?.trim();
   const site = document.body.dataset.viewCounterSite?.trim();
@@ -27,9 +29,9 @@
 
   const pagePath = window.location.pathname;
   const requestUrl = (route) => new URL(route, endpoint);
-  const setViewCount = (value) => {
+  const setViewCount = (elements, value) => {
     if (!Number.isSafeInteger(value) || value < 0) throw new Error("The view counter returned an invalid count.");
-    views.forEach((element) => {
+    elements.forEach((element) => {
       element.textContent = `${new Intl.NumberFormat("zh-CN").format(value)} 看过`;
     });
   };
@@ -53,17 +55,34 @@
     console.error(message, error);
   };
 
-  if (views.length) {
+  if (pageViews.length) {
     requestJson(requestUrl("/api/view"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ site, path: pagePath }),
       keepalive: true,
     })
-      .then((data) => setViewCount(data.views))
+      .then((data) => setViewCount(pageViews, data.views))
       .catch((error) => {
-        views.forEach((element) => { element.textContent = "统计暂不可用"; });
+        pageViews.forEach((element) => { element.textContent = "统计暂不可用"; });
         showError("无法加载文章浏览量统计。", error);
+      });
+  }
+
+  if (listingViews.length) {
+    const countsUrl = requestUrl("/api/counts");
+    countsUrl.searchParams.set("site", site);
+    const paths = [...new Set(listingViews.map((element) => element.dataset.viewPath))];
+    paths.forEach((path) => countsUrl.searchParams.append("path", path));
+    requestJson(countsUrl)
+      .then((data) => {
+        listingViews.forEach((element) => {
+          setViewCount([element], data.counts[element.dataset.viewPath]);
+        });
+      })
+      .catch((error) => {
+        listingViews.forEach((element) => { element.textContent = "统计暂不可用"; });
+        showError("无法加载博客列表浏览量统计。", error);
       });
   }
 

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Archlinux on 果壳中的宇宙</title>
-		<link>https://enji.dev/tags/archlinux/</link>
+		<link>https://guoke.co/tags/archlinux/</link>
 		<description>Recent content in Archlinux on 果壳中的宇宙</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Mon, 02 Nov 2026 18:50:27 +0800</lastBuildDate>
 		
-			<atom:link href="https://enji.dev/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://guoke.co/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Archlinux单硬盘双系统安装方法</title>
-				<link>https://enji.dev/blog/archlinux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/</link>
+				<link>https://guoke.co/blog/archlinux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/</link>
 				<pubDate>Mon, 02 Nov 2026 18:50:27 +0800</pubDate>
-				<guid>https://enji.dev/blog/archlinux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/</guid>
+				<guid>https://guoke.co/blog/archlinux%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;注：如果你有多块硬盘，并且打算用一整块硬盘安装archlinux，那么完全不用理会下面的内容，制作好启动U盘后，进入安装页面，连接好网络输入：&lt;/p&gt;</description>
 			</item>
 	</channel>

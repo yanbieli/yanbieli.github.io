@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>编程 on 果壳中的宇宙</title>
-		<link>https://enji.dev/categories/%E7%BC%96%E7%A8%8B/</link>
+		<link>https://guoke.co/categories/%E7%BC%96%E7%A8%8B/</link>
 		<description>Recent content in 编程 on 果壳中的宇宙</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Sat, 17 Oct 2026 12:24:10 +0800</lastBuildDate>
 		
-			<atom:link href="https://enji.dev/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://guoke.co/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Hello算法</title>
-				<link>https://enji.dev/blog/hello%E7%AE%97%E6%B3%95/</link>
+				<link>https://guoke.co/blog/hello%E7%AE%97%E6%B3%95/</link>
 				<pubDate>Sat, 17 Oct 2026 12:24:10 +0800</pubDate>
-				<guid>https://enji.dev/blog/hello%E7%AE%97%E6%B3%95/</guid>
+				<guid>https://guoke.co/blog/hello%E7%AE%97%E6%B3%95/</guid>
 				<description>&lt;h2 id=&#34;序&#34; data-ss=&#34;序&#34; data-ss-mt=&#34;96&#34; class=&#34;mdx-heading mdx-heading--h2&#34;&gt;&#xD;&#xA;  &lt;a class=&#34;mdx-heading__anchor&#34; href=&#34;#%e5%ba%8f&#34; aria-label=&#34;链接到序&#34;&gt;&lt;svg viewBox=&#34;0 0 20 20&#34; fill=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path fill-rule=&#34;evenodd&#34; d=&#34;M9.493 2.853a.75.75 0 0 0-1.486-.205L7.545 6H4.198a.75.75 0 0 0 0 1.5h3.14l-.69 5H3.302a.75.75 0 0 0 0 1.5h3.14l-.435 3.148a.75.75 0 0 0 1.486.205L7.955 14h2.986l-.434 3.148a.75.75 0 0 0 1.486.205L12.456 14h3.346a.75.75 0 0 0 0-1.5h-3.14l.69-5h3.346a.75.75 0 0 0 0-1.5h-3.14l.435-3.147a.75.75 0 0 0-1.486-.205L12.045 6H9.059l.434-3.147zM8.852 7.5l-.69 5h2.986l.69-5H8.852z&#34; clip-rule=&#34;evenodd&#34;/&gt;&lt;/svg&gt;&lt;/a&gt;&#xD;&#xA;  &lt;span&gt;序&lt;/span&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;knowledge is not free, you have to pay attention.&lt;/p&gt;</description>
 			</item>
 	</channel>

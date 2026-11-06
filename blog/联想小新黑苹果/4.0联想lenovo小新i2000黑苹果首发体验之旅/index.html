@@ -9,18 +9,19 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="4 联想Lenovo小新I2000黑苹果首发体验之旅">
   <meta property="og:description" content="本文介绍了在联想小新 I2000 笔记本上安装 macOS Monterey 黑苹果系统的全过程，包括使用 OpenCore 引导、EFI 文件配置、常见问题解决方案（如卡在 EXITBS）、硬件驱动适配情况，以及单硬盘双系统的安装方法。文末提供了 EFI 下载链接和详细教程，适合该机型用户参考尝试。">
-  <meta property="og:url" content="https://enji.dev/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/4.0%E8%81%94%E6%83%B3lenovo%E5%B0%8F%E6%96%B0i2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/">
-  <meta property="og:image" content="https://enji.dev/assets/images/og-image.png">
+  <meta property="og:url" content="https://guoke.co/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/4.0%E8%81%94%E6%83%B3lenovo%E5%B0%8F%E6%96%B0i2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/">
+  <meta property="og:image" content="https://guoke.co/assets/images/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <title>4 联想Lenovo小新I2000黑苹果首发体验之旅 · 果壳中的宇宙</title>
   <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://tuchuang.guoke.co" crossorigin>
   <link rel="stylesheet" href="/css/site.css">
   <link rel="stylesheet" href="/css/chroma.css">
   
   <link rel="stylesheet" href="/css/twikoo.css">
-  <link rel="preload" href="/fonts/FiraCode-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/LXGWWenKaiGB-Regular3755.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="canonical" href="https://enji.dev/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/4.0%E8%81%94%E6%83%B3lenovo%E5%B0%8F%E6%96%B0i2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/">
+  <link rel="preload" href="https://tuchuang.guoke.co/hermeneutics/static/fonts/FiraCode-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://tuchuang.guoke.co/hermeneutics/static/fonts/LXGWWenKaiGB-Regular3755.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="canonical" href="https://guoke.co/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/4.0%E8%81%94%E6%83%B3lenovo%E5%B0%8F%E6%96%B0i2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/">
 
   </head>
   <body data-view-counter-endpoint="https://guoke-view-counter.guoke.co" data-view-counter-site="guoke.co">
@@ -101,7 +102,7 @@
         </span>
         <span class="article-meta__item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h17M8 16v-4M13 16V8M18 16V4"/></svg>
-          <span data-view-count data-view-path="/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/4.0%E8%81%94%E6%83%B3lenovo%E5%B0%8F%E6%96%B0i2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/" title="文章浏览次数" aria-live="polite">— 看过</span>
+          <span data-view-count="increment" data-view-path="/blog/%E8%81%94%E6%83%B3%E5%B0%8F%E6%96%B0%E9%BB%91%E8%8B%B9%E6%9E%9C/4.0%E8%81%94%E6%83%B3lenovo%E5%B0%8F%E6%96%B0i2000%E9%BB%91%E8%8B%B9%E6%9E%9C%E9%A6%96%E5%8F%91%E4%BD%93%E9%AA%8C%E4%B9%8B%E6%97%85/" title="文章浏览次数" aria-live="polite">— 看过</span>
         </span>
         <span class="article-meta__item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h9l5 5v13H5z"/><path d="M14 3v6h5M8 13h8M8 17h8"/></svg>

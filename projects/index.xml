@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>项目 on 果壳中的宇宙</title>
-		<link>https://enji.dev/projects/</link>
+		<link>https://guoke.co/projects/</link>
 		<description>Recent content in 项目 on 果壳中的宇宙</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -10,6 +10,6 @@
 		
 		
 		
-			<atom:link href="https://enji.dev/projects/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://guoke.co/projects/index.xml" rel="self" type="application/rss+xml" />
 	</channel>
 </rss>
