@@ -3,16 +3,16 @@
   <head>
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="关于前端开发的简短笔记。">
+  <meta name="description" content="关于博客创作的记录。">
   <meta name="author" content="言别离">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="随学随记">
-  <meta property="og:description" content="关于前端开发的简短笔记。">
+  <meta property="og:title" content="日志">
+  <meta property="og:description" content="关于博客创作的记录。">
   <meta property="og:url" content="https://guoke.co/today-i-learned/">
   <meta property="og:image" content="https://guoke.co/assets/images/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <title>随学随记 · 果壳中的宇宙</title>
+  <title>日志 · 果壳中的宇宙</title>
   <link rel="icon" type="image/png" href="/yingying-circle.png">
   <link rel="preconnect" href="https://tuchuang.guoke.co" crossorigin>
   <link rel="stylesheet" href="/css/site.css">
@@ -36,7 +36,7 @@
       <ul class="nav-links">
         <li><a href="/projects/" >项目</a></li>
         <li><a href="/blog/" >博客</a></li>
-        <li><a href="/today-i-learned/" aria-current="page">随学随记</a></li>
+        <li><a href="/today-i-learned/" aria-current="page">日志</a></li>
         <li><a href="/stats/" >统计</a></li>
         <li class="work-menu">
           <details>
@@ -78,7 +78,7 @@
   </div>
   <div class="mobile-nav content-wrapper" hidden>
     <a href="/projects/">项目</a><a href="/blog/">博客</a>
-    <a href="/today-i-learned/">随学随记</a><a href="/stats/">统计</a><a href="/work/skills-and-tools/">工作</a>
+    <a href="/today-i-learned/">日志</a><a href="/stats/">统计</a><a href="/work/skills-and-tools/">工作</a>
   </div>
 </header>
 
@@ -104,115 +104,445 @@
 </div>
 
   <div class="content-wrapper page-header-content">
-    <span class="page-caption">笔记</span>
-    <h1>随学随记</h1>
-    <p>关于前端开发的简短笔记。</p>
+    <span class="page-caption">日志</span>
+    <h1>日志</h1>
+    <p>关于博客创作的记录。</p>
   </div>
 </header>
 
-    <div class="content-wrapper til-content"><div class="til-groups">
-  <section class="til-date-group">
-    <div class="til-date"><time datetime="2023-01-29">2023年1月29日</time></div>
-    <div class="til-timeline"></div>
-    <div class="til-items">
-      <article class="til-item">
-        <span class="til-marker" aria-hidden="true"></span>
-        <div class="til-item-content">
-          <div class="til-tags"><span>#Tailwind CSS</span><span>#CSS</span></div>
-          <h2>Tailwind CSS 的 <code>!important</code> 修饰符</h2>
-          <p>在 utility class 前添加 <code>!</code>，即可让该规则带有 <code>!important</code>：</p>
-          <pre><code>&lt;p class="font-bold !font-medium"&gt;
-  即使 bold 在 CSS 中较晚出现，这里仍会显示为 medium。
-&lt;/p&gt;</code></pre>
-          <p><a href="https://tailwindcss.com/docs/configuration#important-modifier" target="_blank" rel="noreferrer">官方文档</a></p>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="til-date-group">
-    <div class="til-date"><time datetime="2023-01-18">2023年1月18日</time></div>
-    <div class="til-timeline"></div>
-    <div class="til-items">
-      <article class="til-item">
-        <span class="til-marker" aria-hidden="true"></span>
-        <div class="til-item-content">
-          <div class="til-tags"><span>#CSS</span><span>#浏览器</span></div>
-          <h2>嵌套的 backdrop-filter</h2>
-          <p>如果父元素也使用了 <code>backdrop-filter</code>，嵌套元素上的 backdrop filter 可能不会生效。</p>
-          <p><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=993644" target="_blank" rel="noreferrer">相关 issue</a> · <a href="https://stackoverflow.com/questions/60997948/backdrop-filter-not-working-for-nested-elements-in-chrome" target="_blank" rel="noreferrer">解决方法</a></p>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="til-date-group">
-    <div class="til-date"><time datetime="2023-01-17">2023年1月17日</time></div>
-    <div class="til-timeline"></div>
-    <div class="til-items">
-      <article class="til-item">
-        <span class="til-marker" aria-hidden="true"></span>
-        <div class="til-item-content">
-          <div class="til-tags"><span>#CSS</span></div>
-          <h2>在 flex 容器中滚动 pre</h2>
-          <p>如果给 <code>pre</code> 设置 <code>overflow-x: scroll</code> 没有作用，反而滚动了父元素，可能是因为它位于 <code>display: flex</code> 容器中。试着给父元素加上 <code>min-width: 0</code>。</p>
-        </div>
-      </article>
-      <article class="til-item">
-        <span class="til-marker" aria-hidden="true"></span>
-        <div class="til-item-content">
-          <div class="til-tags"><span>#MDX</span><span>#React</span></div>
-          <h2>导入 MDX 文件作为组件</h2>
-          <p>导入 MDX 文件的方式与普通组件相似：</p>
-          <pre><code>import Contents from '@/mdx/Contents.mdx';
-<p>&lt;Contents /&gt;</code></pre>
-<p>详见 <a href="https://mdxjs.com/docs/using-mdx/#mdx-content" target="_blank" rel="noreferrer">MDX 文档</a>。</p>
-</div>
-</article>
+    <div class="content-wrapper til-content"><section class="til-date-group">
+<div class="til-date"><time datetime="2026-07-22">2026年7月22日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
 <article class="til-item">
 <span class="til-marker" aria-hidden="true"></span>
 <div class="til-item-content">
-<div class="til-tags"><span>#CSS</span></div>
-<h2><code>:not()</code> 伪类</h2>
-<p>想给不在 <code>pre</code> 或 <code>.code-block</code> 中的行内 <code>code</code> 添加样式：</p>
-<pre><code>:not(pre, .code-block) &gt; code {
-background-color: red;
-}</code></pre>
+<p>用了很久的github账户dodopoi莫名奇妙被标记，只能自己查看，一切东西都被隐藏，还有什么地方是安全的？</p>
 </div>
 </article>
-</div></p>
-  </section>
-  <section class="til-date-group">
-    <div class="til-date"><time datetime="2023-01-16">2023年1月16日</time></div>
-    <div class="til-timeline"></div>
-    <div class="til-items">
-      <article class="til-item">
-        <span class="til-marker" aria-hidden="true"></span>
-        <div class="til-item-content">
-          <div class="til-tags"><span>#Turborepo</span><span>#JavaScript</span></div>
-          <h2>Turborepo <code>dependsOn</code></h2>
-          <pre><code>"build": {
-  "dependsOn": ["^lint", "test"]
-}</code></pre>
-          <p>带 <code>^</code> 表示依赖其他 package 的 task；不带则表示当前 package 的 task。</p>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="til-date-group">
-    <div class="til-date"><time datetime="2023-01-15">2023年1月15日</time></div>
-    <div class="til-timeline"></div>
-    <div class="til-items">
-      <article class="til-item">
-        <span class="til-marker" aria-hidden="true"></span>
-        <div class="til-item-content">
-          <div class="til-tags"><span>#JavaScript</span><span>#TypeScript</span></div>
-          <h2><code>e.target.valueAsNumber</code></h2>
-          <p>使用 <code>e.target.valueAsNumber</code> 可直接把输入值作为 number 返回，不必再调用 <code>parseInt(e.target.value)</code>。</p>
-        </div>
-      </article>
-    </div>
-  </section>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2026-01-11">2026年1月11日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>统计信息更换为51la。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2025-10-20">2025年10月20日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>博客版本大更新。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2025-07-09">2025年7月9日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>cloud flare里设置了防ai爬虫，导致docsearch多次爬取失败，将搜索改为本地搜索。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2025-06-29">2025年6月29日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>网站字体中文更换为 霞鹜文楷 / LXGW WenKai，英文字体更换为Fira Code，尽管已经将霞鹜文楷.tff转换为.woff2格式，字体体积仍然不小，网站渲染速度受到影响。</p>
+<blockquote>
+<p>字体存放位置X:\guoke\themes\hermeneutics\static\fonts</p>
+</blockquote>
+<p>使用霞鹜文楷轻量化版本，并将.tff格式转化为.woff2格式，进一步压缩字体文件，并将字体文件上传至cloud flare R2，，字体配置文件进行加速，网页加载速度明显得到改善。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2025-06-20">2025年6月20日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>GitHub图床picgo上传出现莫名奇妙的错误，将图床迁移至Cloudflare R2，通过picgo插件S3 picgo amazon s3 uploader WayJam So管理图片，使用该插件需要安装node.js。</p>
+<blockquote>
+<p>使用picgo图片会按月份上传，也可在cloud flare R2里手动上传。</p>
+</blockquote>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2025-04-11">2025年4月11日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>更换新域名：guoke.co</p>
+<p>遇见重定向次数太多时，一般是将域名托管在cloudflare后<strong>SSL/TLS</strong>设置为灵活导致，将其更改为完全即可。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2025-02-24">2025年2月24日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>Hexo安知鱼博客主题还是太过繁重，博客迁移至hugo。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-12-05">2024年12月5日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>提交更新后，网页端不能及时更新，可能是Cloudflare缓存的原因，清理后仍不能解决。加入又拍云联盟，把CDN加速更换为又拍云试试。</p>
+<p>淦！不备案无法加速！接着用Cloudflare吧。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-12-04">2024年12月4日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>评论更改为twikoo。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-12-03">2024年12月3日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>升级主题至1.6.14。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-11-09">2024年11月9日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>通过插件<code>npm install hexo-douban --save</code>添加书籍、电影和游戏页面。</p>
+<div class="mdx-code">
+  <button type="button" class="mdx-code__copy-button" data-copy-code aria-label="复制代码" title="复制代码">
+    <span class="mdx-code__copy-button-message">已复制</span>
+    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 2.75A1.75 1.75 0 0 1 8.75 1h7.5A1.75 1.75 0 0 1 18 2.75v9.5A1.75 1.75 0 0 1 16.25 14h-7.5A1.75 1.75 0 0 1 7 12.25v-9.5ZM8.75 2.5a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25h-7.5ZM3.75 5H5v1.5H3.75a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V16h1.5v1.25A1.75 1.75 0 0 1 12.25 19h-8.5A1.75 1.75 0 0 1 2 17.25V6.75A1.75 1.75 0 0 1 3.75 5Z"/></svg>
+  </button>
+  <div class="mdx-code__content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hexo douban</span></span></code></pre></div></div>
+  <div class="mdx-code__footer">
+    <span class="mdx-code__footer-item">SH</span>
+    <span class="mdx-code__footer-item">行数：1</span>
+    <span class="mdx-code__footer-item">UTF-8</span>
+  </div>
 </div>
 </div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-10-29">2024年10月29日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>通过插件<code>npm install hexo-generator-search --save</code>将博客搜索改为本地搜索，符合现阶段使用需求（algolia全文索引申请已通过，配置还有些问题），本地搜索不能索引加密博客。</p>
+<p>最好运行<code>hexo cl</code>清理下缓存再部署博客。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-10-13">2024年10月13日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>通过插件<code>npm install hexo-blog-encrypt --save</code>为博客添加加密功能。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-09-27">2024年9月27日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>因为一个主题，博客从hugo迁移至hexo，目前来看静态网页生成速度还可以。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-09-22">2024年9月22日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>blowfish升级至v2.76.0。</p>
+<p>Breaking change</p>
+<p>Hugo is deprecating .Site.Author refs in v0.124.0. @unacro submitted a PR to change to move the current login in language.X.toml config files from [author] to [params.author].</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-09-19">2024年9月19日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>测速功能</p>
+<p>Cloud flare完全性下自动程序里的自动程序攻击模式打开后会无法测速，阻止AI爬虫程序和爬网程序可以打开。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-07-12">2024年7月12日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>bug修复。</p>
+<p>Cloud flare证书设置为灵活时会无法提交评论，显示错误，需要设置成完全。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-07-01">2024年7月1日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>停用画廊功能。</p>
+<p>重装系统从云盘同步到本地后，在生成静态网页时会报错，需要重新生成画廊图片的地址，于是停用画廊功能，改为正常插入图片。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-05-06">2024年5月6日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>变更图床cdn为Cloudflare，采用不绑定域名方案。</p>
+<p>变更迁移图床仓库至另一账号，直接fork仓库似乎不能完整取代原图床信息，原仓库删除后博客图片也会失效，需要将博客图片重新插入和上传至新仓库。</p>
+<p>现在博客里的图片不多，迁移起来还不算麻烦。同时幸好博客图片在云盘里存有备份，才顺利完成迁移工作，以后非必需不再动图床仓库。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-04-18">2024年4月18日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>关闭文章背景虚化，在桌面端开了该功能还好，在移动端显示有类似穿模的效果。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-04-16">2024年4月16日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>文章头图格式为featured.gif，大小超过2MB时，生成静态网页时会因超时而失败。另默认背景图不宜过大，会导致博客文件夹大小剧增，图片压缩确实很有必要。</p>
+<p>bug：</p>
+<p>文章<code>x级标题</code>不能只有一个单词waline，不然评论页面会加载不出来。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-04-15">2024年4月15日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>添加归档页面，完善友链页面显示。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-04-12">2024年4月12日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>创建Firebase数据库，用来存储点击数据。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-04-10">2024年4月10日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>添加评论功能。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-03-10">2024年3月10日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>博客blowfish主题的搜索功能失效，经定位问题出在GitHub Pages域名绑定上，解决办法：修改配置文件config&gt;_default&gt;hugo.toml或config.toml。</p>
+<p>“baseURL = &ldquo;域名&rdquo;”</p>
+<p>如果没有购买域名，上面域名处填写“https://githubusename.github.io”，只要配置文件里的域名地址与GitHub Pages域名地址保持一致，搜索功能就可以正常使用。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2024-03-09">2024年3月9日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>github在国内访问时好时坏，这也导致自己在访问博客时，出现和访问github一样的问题。图床既然可以进行CDN加速，网站应该也有类似的方法。经过比对，选择将域名解析从阿里云迁移至cloudflare上，利用cloudflare对博客进行CDN加速。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2023-08-29">2023年8月29日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>加入十年之约。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2023-07-20">2023年7月20日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>主题更换为blowfish。</p>
+<p>新写完一篇文章，如果在生成静态网页时遇到错误，是默认生成的md文档格式不对，需将博客目录下archetypes/default.md替换为blowfish示例文件夹内的archetypes/default.md，以后新建.md文件就不会出错了。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2023-06-18">2023年6月18日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>随着博客数量越来越多，hexo生成静态网页需要的时间越来越多，有了将博客从hexo迁移至hugo上的想法。</p>
+<p>博客迁移成功，同时有NexT爱好者将主题移植到hugo上，省去重新部署的时间，为作者点个👍。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2022-09-27">2022年9月27日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>写博客时遇到了sm.ms图床上传图片失败的问题，免费的方案七牛云有10G空间，貌似不错，但是需要一个备案的域名。域名要想备案需要购买云服务器，与七牛云客服小姐姐沟通域名必须要备案才可以使用，绕不开。</p>
+<p>最后选择某一个GitHub公开仓库配合CDN加速作为图床，这肯定是违背GitHub本身作为代码托管的初衷的，不推荐这么做。同时，当这个仓库存放图片到一定阈值时可能会面临审查的风险。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2022-07-23">2022年7月23日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>博客伊始。</p>
+<p>有了域名，就想把平时写的一点东西收集起来，搭建自己的博客，这样更自由一些。博客首次使用hexo框架搭建，博客主题为NexT，同时把博客部署到GitHub Pages上。</p>
+</div>
+</article>
+</div>
+</section>
+<section class="til-date-group">
+<div class="til-date"><time datetime="2022-07-20">2022年7月20日</time></div>
+<div class="til-timeline"></div>
+<div class="til-items">
+<article class="til-item">
+<span class="til-marker" aria-hidden="true"></span>
+<div class="til-item-content">
+<p>在阿里云199购买了10年ziyue.tech域名。</p>
+</div>
+</article>
+</div>
+</section></div>
   
 
       </main>
@@ -229,7 +559,7 @@ background-color: red;
       </section>
       <div class="footer-groups">
         <section><div class="footer-label">工作</div><a href="/work/contact/">联系我</a><a href="/work/experience/">工作经历</a><span class="footer-soon">服务 <small>即将上线</small></span><a href="/work/skills-and-tools/">技能与工具</a><a href="/work/studio/">工作空间</a></section>
-        <section><div class="footer-label">学习</div><a href="/docs/">文档</a><a href="/blog/">个人博客</a><a href="/today-i-learned/">随学随记 <small>新</small></a></section>
+        <section><div class="footer-label">学习</div><a href="/docs/">文档</a><a href="/blog/">个人博客</a><a href="/today-i-learned/">日志 <small>新</small></a></section>
         <section><div class="footer-label">关于本站</div><a href="https://www.figma.com/community/file/1176392613303840973" target="_blank" rel="noreferrer">设计概念 ↗</a><a href="https://github.com/enjidev/enji.dev" target="_blank" rel="noreferrer">源代码 ↗</a><a href="https://www.foreverblog.cn/go.html" target="_blank" rel="noreferrer">十年之约虫洞 ↗</a></section>
       </div>
     </div>
