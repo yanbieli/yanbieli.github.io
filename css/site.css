@@ -255,6 +255,7 @@ body.quick-access-open{overflow:hidden}
 .article-meta__item svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 .article-layout.has-toc::after{width:1px;flex:none;align-self:stretch;background:var(--border);content:""}
 .toc-column{width:256px;flex:none}
+.blog-article .toc-column{margin-top:-60px}
 .toc-card{top:96px;z-index:901;border-radius:12px}
 .toc-card #TableOfContents{padding:16px 12px}
 .toc-card ul,.toc-card ol{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
